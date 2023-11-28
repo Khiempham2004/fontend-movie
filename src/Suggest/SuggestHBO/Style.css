@@ -1,0 +1,35 @@
+.Class-suggest{
+    color: aliceblue;
+    margin-left: 70px;
+    font-size: 40px;
+    margin-top: 100px;
+}
+.suggest-img{
+    display: flex;
+    /* justify-content: center; */
+    margin-left: 50px;
+    margin-top: 30px;
+}
+.suggest-mdb{
+    width: 220px;
+    margin-left: 20px;
+    background-color: darkgray;
+    border:  2px solid;
+    border-radius: 8px;
+}
+.suggest-heading{
+    color: aliceblue;
+    margin-left: 70px;
+    margin-top: 40px;
+}
+.suggest-carousel{
+    display: flex;
+    /* justify-content: center; */
+    margin-left: 50px;
+    margin-top: 30px;
+}
+.img-suggest{
+    width: 200px;
+    margin-left: 20px;
+    border-radius: 4px;  
+}

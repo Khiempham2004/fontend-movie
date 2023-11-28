@@ -1,0 +1,32 @@
+
+.Avar {
+    margin-top: 30px;
+    display: flex;
+    margin-right: auto; 
+    list-style: none;
+    padding: 0;
+    max-width: 1000px;
+    position: relative;
+}
+
+/* .Avar-image {
+    transition: all 0ms ease 0s;    
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    box-sizing: content-box;
+    flex-shrink: 0;
+    transform:translateX();
+    width: 100%;
+    height: 100%;
+    padding-right: 105px;
+} */
+
+.mySlides {
+    width: 1480px;
+    margin-left: 22px;
+
+    margin-top:80px;
+    background-color: black;
+}

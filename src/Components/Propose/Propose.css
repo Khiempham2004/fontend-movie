@@ -1,0 +1,74 @@
+
+.propose{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1500px;
+    position: relative;
+}
+.propose-flex {
+    margin: 0;
+    min-width: 0;
+    /* flex-direction: column; */
+    text-align: center;
+    padding-top: 30px;
+    max-width: 100%;
+    cursor: pointer;
+}
+.propose-title {
+    height: 60px;
+    color: aliceblue;
+    /* margin-right: 100px; */
+}
+.propose-heading{
+    color: aliceblue;
+    margin-right: 1220px;
+}
+.slider-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 390px;
+}
+.slide-selected{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left:70px ;
+    margin-top: 10px;
+}
+.mySlide{
+    display: flex;
+    justify-content: center;
+    width: 205px;
+    padding-left: 20px;
+    border-radius: 8px;
+    border:  2px solid black;
+    box-shadow: rgb(0, 0, 0) 0px 0px 20px;
+}
+.mySlide .img{
+    font-size: 200px;
+}
+.left, .right {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 92%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  .right {
+    right: 20px;
+    border-radius: 3px 0 0 3px;
+  }
+  .left:hover, .right:hover {
+    background-color: rgba(0,0,0,0.8);
+  }

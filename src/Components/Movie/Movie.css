@@ -1,0 +1,91 @@
+.class-movie {
+    color: aliceblue;
+    padding-left: 90px;
+    margin-top: 100px;
+}
+
+.slide-selected{
+    margin-left:160px;
+    padding-bottom: 30px;
+    padding-right: 130px;
+}
+.mySlided{
+    display: flex;
+    justify-content: center;
+    width: 215px;
+    padding-left: 20px;
+    border:  2px solid black;
+    border-radius: 10px;
+    box-shadow: rgb(0, 0, 0) 0px 0px 20px;
+}
+
+.css-pssmrm{
+    color: aliceblue;
+    margin-left: 86px;
+}
+.b-block-css{
+    display: flex;
+    margin-right: 30px;
+}
+.Movie-image{
+    /* display: flex; */
+    justify-content: center;
+    display: flex;
+    padding-right:5px;
+    padding-top: 10px;
+    /* margin-left: 15px; */
+    padding-bottom: 120px;
+    width: 10px;
+}
+.Movies-suggest{
+    width: 200px;   
+    margin-left: 20px;
+    border:  2px solid black;
+    border-radius: 8px;
+    box-shadow: rgb(0, 0, 0) 0px 0px 20px;
+    padding-right:10px;
+}
+
+.Movies-class{
+    display: block;
+    width: 195px;
+    margin-left:25px;
+    padding-top: 340px;
+    border-radius: 8px;
+}
+
+.movie-heading{
+    color: aliceblue;
+    margin-left: 40px;
+    font-size:30px;
+    padding-bottom: 20px;
+    /* font-family: ; */
+}
+.classMovie-carousel{
+    display: flex;
+    margin-left: 40px;
+    padding-bottom: 40px;
+}
+.carousel-image{
+    display: flex;
+    justify-content: center;
+    padding-left: 90px;
+    padding-top: 20px;
+}
+.moive-carousel{
+    width: 200px;
+    margin-left: 20px;
+    border-radius: 8px;
+}
+.carousel-class{
+    display: flex;
+    justify-content: center;
+    margin-left: 90px;
+    /* margin-bottom: 20px; */
+}
+.classMovie-img{
+    width: 200px;
+    margin-left: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+}

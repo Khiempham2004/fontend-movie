@@ -1,0 +1,15 @@
+.Suggest-setting {
+    color: aliceblue;
+    margin-left: 1140px;
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+.login-settings {
+    /* border-top: 20px solid black; */
+    background-color: var(--theme-ui-colors-popup, #141415);
+    border-right: 50px solid black;
+    border-left: 40px solid black;
+    border-top: 30px solid black;
+    padding: 20px 10px 10px;
+}

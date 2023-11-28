@@ -1,0 +1,69 @@
+.Footer-css {
+    text-align: center;
+    padding:40px 0 20px 0;
+    width: fit-content;
+    justify-content: space-between;
+    display: flex;
+    height: 500px;
+    font-family:'Times New Roman', Times, serif;
+    margin-left: 200px;
+}
+
+.Footer-responsive-container {
+    display: flex;
+    width: 1050px;
+    margin: 20px auto;
+    padding-right: 50px;
+}
+.Footer-responsive-intainer{
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    width: fit-content;
+}
+.Footer-conversation {
+    display: flex;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+.Footer-menus {
+    display: flex;
+    margin: 10px 25px 0px 10px;
+    font-size: 22px;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+.Footer-menus a{
+    color: aliceblue;
+}
+.Footer-intersation{
+    line-height: 40px;
+    margin-top: 22px;
+    font-size: 19px;
+    color: aliceblue;
+    align-self:flex-end;
+}
+.Footer-responsive-external {
+    /* justify-content:space-between; */
+    color: aliceblue;
+    padding-top: 14px;
+    font-size: 18px;
+    margin-right: -20px;
+} 
+
+.Footer-center {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-top: 40px;
+    width: 200px;
+    height: 35px;
+    /* display: block; */
+}
+.Footer-left {
+    margin-top: 30px;
+}
+.Footer-sponsion {
+    margin-top: 30px;
+}

@@ -1,0 +1,43 @@
+.Carousel{
+    margin-top: 20px;
+}
+.Carousel-heading {
+    padding-bottom: 20px;
+}
+.css-pssmrm{
+    margin-left: 35px;
+    margin-top: 40px;
+}
+.b-block-css {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 1470px;
+}
+.block-css{
+    display: block;
+    width: 182px;
+    margin-left: 25px;
+    border:  2px solid black;
+    border-radius: 8px;
+    box-shadow: rgb(0, 0, 0) 0px 0px 20px;
+}
+.carousel-control-left .carousel-control-right{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 91%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.carousel-control-right{
+    right: 20px;
+    border-radius: 3px 0 0 3px;
+}

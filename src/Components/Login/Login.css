@@ -1,0 +1,48 @@
+.login-heading{
+    padding-left: 600px;
+    font-size: 10px;
+    background-color: var(--theme-ui-colors-popup,#141415);
+    border-right : 520px solid black;
+    border-left:490px solid black ;
+    border-top: 30px solid black;
+    margin: 90px 0px 20px;
+    padding: 10px 40px 20px;
+}
+.title{
+    font-size: 45px;
+    color: white;
+    padding-left:100px;
+}
+.form-label{
+    color: aliceblue;
+    font-size: 30px;
+}
+.checkvar{
+    color: aliceblue;
+    font-size: 30px;
+}
+.form-check{
+    font-size: 28px;
+    padding-right: 100px;
+
+}
+.form-check input {
+    border-radius: 8px;
+    font-size: 30px;
+}
+.form-group{
+    padding-top: 15px;
+    font-size: 28px;
+    padding-left: 42px;
+}
+.form-group input {
+    border-radius: 8px;
+    font-size: 30px;
+}
+.btn {
+    padding :5px 15px 5px 15px;
+    margin-left:150px;
+    margin-top: 20px;
+    font-size: 25px;
+    background-color: red;
+}

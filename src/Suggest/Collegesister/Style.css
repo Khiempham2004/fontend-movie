@@ -1,0 +1,51 @@
+.Colle-head{
+    color: aliceblue;
+    margin-left: 80px;
+    margin-top: 40px;
+    font-size: 40px;
+}
+.Coller-image{
+    display: flex;
+    justify-content: center;
+    margin-left: 37px;
+    margin-top: 40px;
+    padding-bottom: 80px;
+}
+.coller-sport{
+    width: 220px;
+    margin-left: 18px;
+    border: 2px solid black;
+    background-color:darkgray;
+    border-radius: 8px;
+}
+.colle-heading{
+    color: aliceblue;
+    margin-left: 83px;
+    font-size: 40px;
+}
+.coller-context{
+    display: flex;
+    justify-content: center;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+.coller-effect{
+    width: 222px;
+    margin-left: 18px;
+    background-color: darkgray;
+    border:  2px solid black;
+    border-radius: 8px;
+}
+.gesister-img{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.color-image{
+    width: 220px;
+    margin-left: 20px;
+    background-color: darkgray;
+    border-radius: 8px;
+    border:  2px solid black;
+}

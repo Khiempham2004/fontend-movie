@@ -1,0 +1,169 @@
+.Container {
+    display:flex;
+    justify-content:space-around;
+    text-align: center;
+    font-size: 20px;
+    left:0;
+    right : 0;
+    padding-left: 20px;
+    padding-right:64px;
+    height: 54px;
+    z-index: 3;
+    position:relative;
+    margin-top: 15px;
+}
+.fixed-top{
+    background-color: black;
+    font-size: 120px;
+}
+.boxShawdow {
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+}
+.boxShawdow-logo {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    margin-right: 5px;
+    font-size: 20px;
+}
+.Avarta-login{
+    width: 30px;
+    margin-bottom: 20px;
+    margin-left:20 ;
+}
+.heading {
+    display: flex;
+    text-align: center;
+    flex:3;
+    margin-right: 100px;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 50px;
+}
+
+.heading-menu {
+    flex:3;
+    justify-content: space-between;
+    display: flex;  
+}
+.Head-Tv360{
+    color: #dbdbdb;
+    /* margin-right: 30px; */
+}
+.Head-movies{
+    color: #dbdbdb;
+}
+.Head-videos{
+    color: #dbdbdb;
+    padding-right: 10px;
+}
+.Head-hbo-go{
+    color: #dbdbdb;
+}
+
+.a {
+    color: rgba(255,255,255,0.87);
+}
+
+.Head-movie {
+    color:white;
+}
+.header {
+    justify-content: center;
+    flex:3;
+    display: block;
+    width: 310px;
+    /* top: 10px; */
+    position:relative;
+    right: 10px;
+}
+.header-search {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    padding-left: 50px;
+    width: 850px;
+    padding: 1px 1px 10px 20px;
+    border-radius: 12px;
+}
+li {
+    list-style: none;
+} 
+a{
+    text-decoration: none;
+}
+.header-input{
+    margin-left: 10px;
+    font-size: 10px;
+    color: #dbdbdb;
+    padding-left: 1px;
+    /* padding-top: 0px; */
+    border-radius: 8px;
+}
+.header-search .header-input{
+    background-color: white;
+    font-size: 30px;
+    border-radius: 30px;
+}
+.header-search i.bx-search-alt-2 {
+    position: absolute;
+    z-index: 15;
+    color:#262626;
+    font-size: 20px;
+    padding-left: 8px;
+}
+
+.header-package-effect {
+    margin-left: 23px;
+    background-color: red;
+    border-radius: 10px;
+}
+.header-icon {
+    display: flex;
+    justify-content:space-around;
+    flex:2;
+    margin-left: 80px;
+    padding : 10px 10px; 
+    cursor: pointer;
+    border-radius: 4;
+    color: #dbdbdb;
+}
+.header-bell{
+    display: flex;
+    justify-content: center;
+}
+.header-userName {
+    display: block;
+    opacity: 1;
+    right: 80px;
+    top:100%;
+}
+
+.header-login input {
+    border: solid 1px #dbdbdb;
+    /* outline: none; */
+    padding: 3px 10px 3px 26px;
+    /* z-index: 5; */
+    color: #262626;
+    font-size: 25px;
+    border: 1px solid black ;
+    border-radius: 15px;
+    flex-direction: column;
+}
+.header-login button {
+    background-color: red;
+    color:#fafafa; 
+    border-radius: 10px;
+    padding: 15px 70px 20px 90px; 
+    overflow: hidden;
+    text-decoration: none;
+}

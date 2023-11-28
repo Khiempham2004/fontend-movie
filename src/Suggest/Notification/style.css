@@ -1,0 +1,15 @@
+.noti {
+    justify-content:space-between;
+    /* display: flex; */
+}
+
+.noti-heading{
+    display:flex;
+    justify-content: space-between;
+    color:white;
+    margin-top: 100px;
+    padding-left: 630px;
+    background-color: aquamarine;
+    /* margin-left: 300px; */
+    border:  50px solid aquamarine;
+}

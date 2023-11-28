@@ -1,0 +1,22 @@
+.Channel-header{
+    margin-top: 40px;
+}
+.Channel-heading{
+    margin-left: 45px;
+    font-size: 35px;
+    display: flex;
+    color: aliceblue;
+}
+.Channel-context{
+    display: flex;
+    justify-content: center;
+    width: 1490px;
+    /* margin-left: 5px ; */
+}
+.channel-block-css{
+    display: block;
+    width: 218px;
+    margin-left: 25px;
+    border:  2px solid ;
+    background-color:slategrey; 
+}

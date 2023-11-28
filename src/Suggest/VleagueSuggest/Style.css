@@ -1,0 +1,17 @@
+.Vleague-heading{
+    color: aliceblue;
+    margin-left: 80px;
+    margin-top: 100px;
+}
+.V-league{
+    margin-left: 60px;
+    margin-top: 40px;
+    /* width: 100px; */
+    margin-bottom: 100px;
+}
+.Vleague-suggest{
+    width: 220px;
+    margin-left: 20px;
+    background-color: darkgray;
+    border-radius: 8px;
+}
