@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './Footer.css'
+import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 function Footer() {
     return ( 
     <div className='Footer-css'> 
@@ -13,11 +15,11 @@ function Footer() {
                         />
                     </div>
                     <div className='Footer-menus'>
-                        <a href='/intro'>Giới Thiệu</a><br></br>
-                        <a href='/terms'>Điều Khoản Ứng Dụng</a><br></br>
-                        <a href='/privacy-policy'>Chính Sách Bảo Mật</a><br></br>
-                        <a href='/support'>Liên Hệ</a><br></br>
-                        <a href='/'>Hướng Dẫn</a><br></br>
+                        <NavLink to='/intro'>Giới Thiệu</NavLink><br></br>
+                        <Link to='/terms'>Điều Khoản Ứng Dụng</Link><br></br>
+                        <Link to='/privacy-policy'>Chính Sách Bảo Mật</Link><br></br>
+                        <Link to='/support'>Liên Hệ</Link><br></br>
+                        <Link to='/huongdan'>Hướng Dẫn</Link><br></br>
                     </div>
                 </div>
                 <br></br>

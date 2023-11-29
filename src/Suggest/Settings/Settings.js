@@ -6,7 +6,7 @@ function Settings() {
         <div>
             <div className='login-settings'>
                 <h2 className='Suggest-setting'>Xin Chào, Phạm Khiêm</h2>
-                <Link to=''>Đăng xuất</Link>
+                <Link to='/'>Đăng xuất</Link>
             </div>
         </div>
     );

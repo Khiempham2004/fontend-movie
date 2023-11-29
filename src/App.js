@@ -20,6 +20,7 @@ import FunnySuggest from './Suggest/FunnySuggest/Index';
 import SuggestOasis from './Suggest/SuggestOasis/Index';
 import Register from './Components/Register/Register';
 import Settings from './Suggest/Settings/Settings';
+import Propose from './Components/Propose/Propose';
 
 
 function App() {
@@ -59,7 +60,11 @@ function App() {
           <SuggestOasis />
           <Footer />
         </>} />
-        <Route path='/recommend/movies' element={<>Component movie</>} />
+        <Route path='/recommend/movies' element={<>
+          <Narbar/>
+        <Propose/>
+        <Footer/>
+        </>} />
         <Route exact path='/collections/movies/xem-nhieu-nhat-tren-tv360' element={<>
           <Narbar />
           <ComponentMovies />

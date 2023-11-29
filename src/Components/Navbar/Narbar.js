@@ -138,11 +138,6 @@ const Narbar = () => {
                         <ul>
                             <li>
                                 <Link to="/login"><i className='bx bxs-user bx-md'></i></Link>
-                                {/* <Link to='/settings'><img
-                                className='Avarta-login'
-                                alt='avarta'
-                                    src='https://img-zlr2.tv360.vn/tv360-static/static/web/images/default_avatar.png'
-                                /></Link> */}
                             </li>
                         </ul>
                     </div>
