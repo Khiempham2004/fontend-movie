@@ -1,4 +1,4 @@
-
+import './logo.svg'
 import './App.css';
 import React, { useState } from 'react'
 import Narbar from './Components/Navbar/Narbar';
@@ -70,7 +70,9 @@ function App() {
           <Settings />
           <Footer />
         </>} />
-        <Route exact path='/Register' element={<><Register /></>} />
+        {/* <Route exact path='/Login' element={<>
+          
+        <Register/></>} /> */}
         <Route path='/login' element={<>
           <Narbar />
           <Login />
