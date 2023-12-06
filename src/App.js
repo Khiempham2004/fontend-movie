@@ -17,7 +17,6 @@ import SuggestSister from './Suggest/SuggestSister/Index';
 import VleagueSuggest from './Suggest/VleagueSuggest';
 import FunnySuggest from './Suggest/FunnySuggest/Index';
 import SuggestOasis from './Suggest/SuggestOasis/Index';
-import Settings from './Suggest/Settings/Settings';
 import ReduxMainSlider from './redux/ReduxMainslider';
 import ReduxPropose from './redux/ReduxPropose/Index';
 import ReduxCooldown from './redux/ReduxCooldown/Index';
@@ -31,7 +30,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index path="/" element={<Home />} />
+        <Route index path="/" element={<>
+        <Home/>
+        </>} />
         <Route exact path='/Following' element={<Following />} />
         <Route exact path='/movie/tan-tieu-ngao-giang-ho' element={<>
           <Narbar/>
@@ -102,11 +103,6 @@ function App() {
         <Route exact path='/collections/movies/xem-nhieu-nhat-tren-tv360' element={<>
           <Narbar />
           <ComponentMovies />
-          <Footer />
-        </>} />
-        <Route exact path='/settings' element={<>
-          <Narbar />
-          <Settings />
           <Footer />
         </>} />
         <Route path='/login' element={<>

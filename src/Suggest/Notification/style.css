@@ -6,10 +6,10 @@
 .noti-heading{
     display:flex;
     justify-content: space-between;
-    color:white;
+    /* color:white; */
     margin-top: 100px;
     padding-left: 630px;
-    background-color: aquamarine;
+    background-color: white;
     /* margin-left: 300px; */
-    border:  50px solid aquamarine;
+       border:  50px solid white;
 }

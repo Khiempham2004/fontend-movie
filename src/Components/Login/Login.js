@@ -15,7 +15,6 @@ const isEmailValid = (Email) => {
     return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(Email);
 }
 
-
 function Login() {
     const [formValue, setFormValue] = useState(listForm)
     const [formError, setFormError] = useState({});

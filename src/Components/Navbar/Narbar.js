@@ -46,7 +46,9 @@ const Narbar = () => {
     const [navSubSuggest, navSetSubSuggest] = useState(contextSuggest)
     const [anchorEl, setAnchorEl] = React.useState(null);
     const navigate = useNavigate();
-
+    const handleSuggest = () => {
+        setSuggest((prevHasNotification) => !prevHasNotification);
+      };
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -122,7 +124,7 @@ const Narbar = () => {
                     </div>
                 </div>
                 <div className='header-icon'>
-                    <div title='Thông báo' className='header-bell'>
+                    <div title='Thông báo'className={handleSuggest ? "header-bell noti-active" : "header-bell"}>
                         <Link to='/thongbao'><i className='bx bxs-bell bx-md'></i></Link>
                     </div>
                     <br></br>
