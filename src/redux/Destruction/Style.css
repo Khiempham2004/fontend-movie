@@ -1,0 +1,104 @@
+.redux-image{
+    margin-top: 130px;
+    margin-left: 200px;
+}
+.redux-img{
+    width: 400px;
+}
+.propose-redux{
+    display: flex;
+    /* justify-content: center; */
+    /* margin-right: 150px; */
+}
+.redux-following{
+    padding-top: 120px;
+    margin-right: 200px;
+}
+.redux-typography {
+    color: aliceblue;
+    margin-left: 200px;
+}
+.redux-link {
+    color: var(--theme-ui-colors-whites-4, rgba(255, 255, 255, 0.4));
+    margin-left: 200px;
+    margin-top: 10px;
+    display: flex;
+}
+.redux-pr05{
+    display: flex;
+}
+.psnyc-k4 {
+    margin-right: 30px;
+    border: 1px solid darkgray;
+    padding-left: 8px;
+    padding-right: 8px;
+    height: 30px;
+    border-radius: 8px;
+}
+
+.psnyc-k27 {
+    margin-right: 50px;
+    border: 1px solid darkgray;
+    padding-left: 8px;
+    padding-right: 8px;
+    height: 30px;
+    border-radius: 8px;
+}
+.mx-auto-mb-4 {
+    color: aliceblue;
+    margin-left: 205px;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+.mx-auto-mb-5 {
+    color: var(--theme-ui-colors-whites-4, rgba(255, 255, 255, 0.4));
+    margin-left: 205px;
+    margin-top: 10px;
+    font-size: 16px;
+    display: -webkit-box;
+    overflow: hidden;
+}
+.redux-lp{
+    box-sizing: border-box;
+    /* margin: 1px 0px 0px; */
+    /* min-width: 0px; */
+    /* padding-top: 1px; */
+    font-size: 17px;
+    line-height: 17px;
+    font-weight: 400;
+    color: var(--theme-ui-colors-whites-4,rgba(255,255,255,0.4));
+    /* display: flex; */
+}
+.redux-mdbcol{
+    justify-content: center;
+
+}
+.redux-div {
+    color: var(--theme-ui-colors-whites-4, rgba(255, 255, 255, 0.4));
+    justify-content: center;
+    /* display: flex; */
+    margin-left: 80px;
+}
+.coller-rest{
+    margin-left:205px;
+    margin-top: 10px;
+
+}
+.collest-redux {
+    display: flex;
+    color: var(--theme-ui-colors-whites-4, rgba(255, 255, 255, 0.4));
+    font-size: 17px;
+
+}
+.collest-col {
+    display: flex;
+    color: var(--theme-ui-colors-whites-4, rgba(255, 255, 255, 0.4));
+    font-size: 17px;
+}
+
+.collest-p {
+    display: flex;
+    color: var(--theme-ui-colors-whites-4, rgba(255, 255, 255, 0.4));
+    font-size: 17px;
+}

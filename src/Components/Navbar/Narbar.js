@@ -47,7 +47,6 @@ const Narbar = () => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const navigate = useNavigate();
 
-
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -55,16 +54,14 @@ const Narbar = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
-
     const navSuggest = () => {
         setSuggest(true)
     }
-
-    // const handleNav = (event) => {
-    //     event.preventDefault()
-    //     const value = event.target.value;
-    //     console.log(value);
-    // }
+    const handleNav = (event) => {
+        event.preventDefault()
+        const value = event.target.value;
+        console.log(value);
+    }
     const handleSearchNav = (searchName) => {
         const filterNav = contextSuggest.filter(item => {
             return item.title.toLowerCase().indexOf(searchName.toLowerCase()) > -1 || item.id === searchName;
@@ -72,7 +69,7 @@ const Narbar = () => {
         navSetSubSuggest(filterNav)
     }
 
-    return (
+    return (    
         <div className='fixed-top'>
             <div className='Container'>
                 <div className='boxShawdow'>
@@ -112,7 +109,7 @@ const Narbar = () => {
                             className='header-input'
                             disablePortal
                             options={contextSuggest}
-                            sx={{ width: 300 }}
+                            sx={{ width: 330 }}
                             renderInput={(params) => <TextField {...params} type='text' autoComplete='off' placeholder='Tìm Kiếm'
                             />}
                             onChange={(event, newValue) => {
@@ -125,18 +122,18 @@ const Narbar = () => {
                     </div>
                 </div>
                 <div className='header-icon'>
-                    <div className='header-bell'>
+                    <div title='Thông báo' className='header-bell'>
                         <Link to='/thongbao'><i className='bx bxs-bell bx-md'></i></Link>
                     </div>
                     <br></br>
                     <div className='header-package' title='mua gói'>
-                        <a href='/packages'>
+                        <Link title='Mua Gói' href='/packages'>
                             <button className='header-package-effect'>Mua Gói</button>
-                        </a>
+                        </Link>
                     </div>
                     <div className='header-userName'>
                         <ul>
-                            <li>
+                            <li title='Đăng Nhập'>
                                 <Link to="/login"><i className='bx bxs-user bx-md'></i></Link>
                             </li>
                         </ul>

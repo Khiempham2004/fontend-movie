@@ -7,7 +7,6 @@ import Login from './Components/Login/Login';
 import ComponentMovies from './Components/Movie/Movie';
 import TVComponent from './Components/TV/TVComponent';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import Home from './pades/Home/index'
 import Following from './pades/Following';
 import Collegesister from './Suggest/Collegesister/Index';
@@ -18,17 +17,56 @@ import SuggestSister from './Suggest/SuggestSister/Index';
 import VleagueSuggest from './Suggest/VleagueSuggest';
 import FunnySuggest from './Suggest/FunnySuggest/Index';
 import SuggestOasis from './Suggest/SuggestOasis/Index';
-import Register from './Components/Register/Register';
 import Settings from './Suggest/Settings/Settings';
-import Propose from './Components/Propose/Propose';
-
+import ReduxMainSlider from './redux/ReduxMainslider';
+import ReduxPropose from './redux/ReduxPropose/Index';
+import ReduxCooldown from './redux/ReduxCooldown/Index';
+import ReduxStone from './redux/ReduxStone/Index';
+import index from './pades/Following/index';
+import Destruction from './redux/Destruction/Index';
+import ReduxGangster from './redux/ReduxGangster/Index';
+import ReduxControl from './redux/ReduxControl/Index';
 
 function App() {
   return (
-
     <BrowserRouter>
       <Routes>
         <Route index path="/" element={<Home />} />
+        <Route exact path='/Following' element={<Following />} />
+        <Route exact path='/movie/tan-tieu-ngao-giang-ho' element={<>
+          <Narbar/>
+        <ReduxControl/>
+        <Footer/>
+        </>}/>
+        <Route exact path='/movie/tan-tieu-ngao-giang-ho' element={<>
+        <Narbar/>
+        <ReduxGangster/>
+        <Footer/>
+        </>}/>
+        <Route exact path='/movie/thanh-guom-diet-quy-ky-vien-tran' element={<>
+        <Narbar/>
+        <Destruction/>
+        <Footer/>
+        </>} />
+        <Route index path='/movie/tien-si-da-phan-3-dr-stone-season-3' element={<>
+          <Narbar />
+          <ReduxStone />
+          <Footer />
+        </>} />
+        <Route index path='/movie/chu-thuat-hoi-chien-jujutsu-kaisen' element={<>
+          <Narbar />
+          <ReduxCooldown />
+          <Footer /></>} />
+        <Route index path="/chuyen-tinh-notting-notting-hill" element={<>
+          <Narbar />
+          <ReduxPropose />
+          <Footer />
+        </>} />
+        <Route index path="/movie/nguoi-hobbit-dai-chien-5-canh-quan-the-hobbit" element={<>\
+          <Narbar />
+          <ReduxMainSlider />
+          <Footer />
+        </>} />
         <Route path='/truongphongdo' element={<>
           <Narbar />
           <StyleSchooll />
@@ -60,11 +98,7 @@ function App() {
           <SuggestOasis />
           <Footer />
         </>} />
-        <Route path='/recommend/movies' element={<>
-          <Narbar/>
-        <Propose/>
-        <Footer/>
-        </>} />
+        <Route path='/recommend/movies' element={<>Component movies</>} />
         <Route exact path='/collections/movies/xem-nhieu-nhat-tren-tv360' element={<>
           <Narbar />
           <ComponentMovies />
@@ -75,9 +109,6 @@ function App() {
           <Settings />
           <Footer />
         </>} />
-        {/* <Route exact path='/Login' element={<>
-          
-        <Register/></>} /> */}
         <Route path='/login' element={<>
           <Narbar />
           <Login />
