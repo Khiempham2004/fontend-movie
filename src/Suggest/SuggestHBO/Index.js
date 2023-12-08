@@ -23,7 +23,7 @@ function SuggestHBO() {
                         <div>
                             <img className='suggest-mdb'
                                 alt="cinemax"
-                                src="https://img-zlr1.tv360.vn/image1/2022/03/04/14/1646379975451/4829b770ef31_480_270.png" 
+                                src="https://img-zlr1.tv360.vn/image1/2022/03/04/14/1646379975451/4829b770ef31_480_270.png"
                             />
                         </div>
                     </li>
@@ -35,14 +35,14 @@ function SuggestHBO() {
             <div>
                 <div className='suggest-carousel'>
                     <img className='img-suggest'
-                    alt='Cỗ Máy Địa Ngục'
+                        alt='Cỗ Máy Địa Ngục'
                         src='https://img-zlr1.tv360.vn/image1/2023/11/01/21/e8b6ada8/e8b6ada8-a570-41d2-8a9a-37a7a1556eb9_360_540.jpg'
                     />
                     <img className='img-suggest'
                         alt='Gã Hề Ma Qúai : Chương 2 -It: Cheaper 2'
                         src='https://img-zlr1.tv360.vn/image1/2023/09/29/15/ad8e774f/ad8e774f-2916-44d3-8e5f-b96f886f0678_360_540.jpg'
                     />
-                    <img/>
+                    <img />
                     <img className='img-suggest'
                         alt="Annabelle Về Nhà - Annabelle Comes Home"
                         src='https://img-zlr1.tv360.vn/image1/2023/09/19/14/ccb2392f/ccb2392f-6a1d-457e-ad95-7c50d2d1c31a_360_540.jpg'
@@ -67,14 +67,14 @@ function SuggestHBO() {
             <div>
                 <div className='suggest-carousel'>
                     <img className='img-suggest'
-                    alt='Cỗ Máy Địa Ngục'
+                        alt='Cỗ Máy Địa Ngục'
                         src='https://img-zlr1.tv360.vn/image1/2023/11/02/02/c2dd2262/c2dd2262-9f73-4744-8a81-5bab64990a35_360_540.jpg'
                     />
                     <img className='img-suggest'
                         alt='Gã Hề Ma Qúai : Chương 2 -It: Cheaper 2'
                         src='https://img-zlr1.tv360.vn/image1/2023/10/28/14/d2cb430e/d2cb430e-3187-4d6a-b3cd-84475873181e_360_540.jpg'
                     />
-                    <img/>
+                    <img />
                     <img className='img-suggest'
                         alt="Annabelle Về Nhà - Annabelle Comes Home"
                         src='https://img-zlr1.tv360.vn/image1/2023/10/28/19/544e9600/544e9600-a508-41ab-b92b-c226a6561ee0_360_540.jpg'
@@ -99,14 +99,14 @@ function SuggestHBO() {
             <div>
                 <div className='suggest-carousel'>
                     <img className='img-suggest'
-                    alt='Cỗ Máy Địa Ngục'
+                        alt='Cỗ Máy Địa Ngục'
                         src='https://img-zlr1.tv360.vn/image1/2023/11/06/14/1699255396249/066fa0032f5f_360_540.jpeg'
                     />
                     <img className='img-suggest'
                         alt='Gã Hề Ma Qúai : Chương 2 -It: Cheaper 2'
                         src='https://img-zlr1.tv360.vn/image1/2023/11/06/14/1699255563278/533defb7ab3e_360_540.webp'
                     />
-                    <img/>
+                    <img />
                     <img className='img-suggest'
                         alt="Annabelle Về Nhà - Annabelle Comes Home"
                         src='https://img-zlr1.tv360.vn/image1/2023/10/26/16/1698314363969/0e55f9f93982_360_540.jpeg'
@@ -131,14 +131,14 @@ function SuggestHBO() {
             <div>
                 <div className='suggest-carousel'>
                     <img className='img-suggest'
-                    alt='Cỗ Máy Địa Ngục'
+                        alt='Cỗ Máy Địa Ngục'
                         src='https://img-zlr1.tv360.vn/image1/2023/08/09/20/cb5e6446/cb5e6446-21d6-4b2d-8fa4-674366dc3b91_360_540.jpg'
                     />
                     <img className='img-suggest'
                         alt='Gã Hề Ma Qúai : Chương 2 -It: Cheaper 2'
                         src='https://img-zlr1.tv360.vn/image1/2023/08/09/20/24048d38/24048d38-2745-44d7-9eaa-e70c30562e86_360_540.jpg'
                     />
-                    <img/>
+                    <img />
                     <img className='img-suggest'
                         alt="Annabelle Về Nhà - Annabelle Comes Home"
                         src='https://img-zlr1.tv360.vn/image1/2023/07/09/17/a871e951/a871e951-1ceb-4815-a6cd-f7b1e17afe88_360_540.jpg'

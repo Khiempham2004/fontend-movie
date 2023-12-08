@@ -9,12 +9,10 @@ function Avatar() {
             <div className='Avar'>
                 <MDBCarousel showControls interval={3000}>
                     <MDBCarouselItem itemId={1} >
-                    <Link>
                         <img 
                             src='https://img-zlr1.tv360.vn/image1/2023/10/31/10/1698722052160/2047760c1e1d_640_360.jpg'
                             className='mySlides'
                             alt='...' />
-                    </Link>
                     </MDBCarouselItem>
                     <MDBCarouselItem itemId={2}>
                         <img

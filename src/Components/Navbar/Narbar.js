@@ -126,7 +126,7 @@ const Narbar = () => {
                     </div>
                     <br></br>
                     <div className='header-package' title='mua gói'>
-                        <Link title='Mua Gói' href='/packages'>
+                        <Link title='Mua Gói' to='/packages'>
                             <button className='header-package-effect'>Mua Gói</button>
                         </Link>
                     </div>

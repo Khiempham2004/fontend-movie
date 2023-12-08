@@ -21,33 +21,36 @@ import ReduxMainSlider from './redux/ReduxMainslider';
 import ReduxPropose from './redux/ReduxPropose/Index';
 import ReduxCooldown from './redux/ReduxCooldown/Index';
 import ReduxStone from './redux/ReduxStone/Index';
-import index from './pades/Following/index';
 import Destruction from './redux/Destruction/Index';
 import ReduxGangster from './redux/ReduxGangster/Index';
 import ReduxControl from './redux/ReduxControl/Index';
+import Packages from './Components/Packages/Index';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index path="/" element={<>
-        <Home/>
+        <Route index path="/" element={<><Home /></>} />
+        <Route index path='/packages' element={<>
+          <Narbar />
+          <Packages />
+          <Footer />
         </>} />
         <Route exact path='/Following' element={<Following />} />
         <Route exact path='/movie/tan-tieu-ngao-giang-ho' element={<>
-          <Narbar/>
-        <ReduxControl/>
-        <Footer/>
-        </>}/>
+          <Narbar />
+          <ReduxControl />
+          <Footer />
+        </>} />
         <Route exact path='/movie/tan-tieu-ngao-giang-ho' element={<>
-        <Narbar/>
-        <ReduxGangster/>
-        <Footer/>
-        </>}/>
+          <Narbar />
+          <ReduxGangster />
+          <Footer />
+        </>} />
         <Route exact path='/movie/thanh-guom-diet-quy-ky-vien-tran' element={<>
-        <Narbar/>
-        <Destruction/>
-        <Footer/>
+          <Narbar />
+          <Destruction />
+          <Footer />
         </>} />
         <Route index path='/movie/tien-si-da-phan-3-dr-stone-season-3' element={<>
           <Narbar />

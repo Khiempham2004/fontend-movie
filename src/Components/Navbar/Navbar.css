@@ -14,7 +14,8 @@
 }
 .fixed-top{
     background-color: black;
-    /* font-size: 120px; */
+    font-size: 120px;
+    width: 1578px;
 }
 .boxShawdow {
     display: flex;
@@ -23,15 +24,10 @@
     align-items: center;
     box-sizing: border-box;
     margin: 0;
-    /* min-width: 0; */
 }
 .boxShawdow-logo {
     box-sizing: border-box;
     margin: 0;
-    /* min-width: 0; */
-    /* max-width: 100%; */
-    /* height: auto; */
-    /* width: 100%; */
     margin-right: 5px;
     font-size: 20px;
 }
@@ -54,6 +50,7 @@
     flex:3;
     justify-content: space-between;
     display: flex;  
+    margin-top: 10px;
 }
 .Head-Tv360{
     color: #dbdbdb;
@@ -80,8 +77,7 @@
     justify-content: center;
     flex:3;
     display: block;
-    width: 310px;
-    /* top: 10px; */
+    top: 5px;
     position:relative;
     right: 10px;
 }
@@ -92,7 +88,6 @@
     padding-left: 50px;
     /* width: 1850px; */
     padding: 1px 1px 10px 20px;
-    /* border-radius: 12px; */
 }
 li {
     list-style: none;
@@ -104,9 +99,6 @@ a{
     margin-left: 10px;
     font-size: 10px;
     color: #dbdbdb;
-    padding-left: 1px;
-    /* padding-top: 0px; */
-    border-radius: 8px;
 }
 .header-search .header-input{
     background-color: white;

@@ -23,7 +23,7 @@ function VleagueSuggest() {
         </div>
         <div>
             <li className='V-league'>
-                <Link>
+                <Link to=''>
                     <img className='Vleague-suggest'
                         alt='Allen V. Farrow P1'
                         src='https://img-zlr1.tv360.vn/image1/2022/03/31/12/6c2f6195/6c2f6195-49e8-4c6e-96ae-27ab3e95d55b_360_540.jpg'
