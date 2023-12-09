@@ -45,7 +45,7 @@ const Narbar = () => {
     const [isSuggest, setSuggest] = useState(false)
     const [navSubSuggest, navSetSubSuggest] = useState(contextSuggest)
     const [anchorEl, setAnchorEl] = React.useState(null);
-    const navigate = useNavigate();
+    const navigate = useNavigate("1")
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -112,9 +112,12 @@ const Narbar = () => {
                             renderInput={(params) => <TextField {...params} type='text' autoComplete='off' placeholder='Tìm Kiếm'
                             />}
                             onChange={(event, newValue) => {
-                                navigate(`/${newValue?.link}`, {
+                                if(newValue){
+                                    const {link} = newValue;
+                                navigate(`/${link}`, {
                                     relative: 'route'
-                                })
+                                });
+                                }
                             }}
                         />
                         <i className='bx bx-search-alt-2 bx-ms'></i>
