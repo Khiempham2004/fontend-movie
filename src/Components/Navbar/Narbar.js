@@ -68,7 +68,7 @@ const Narbar = () => {
         navSetSubSuggest(filterNav)
     }
 
-    return (    
+    return (
         <div className='fixed-top'>
             <div className='Container'>
                 <div className='boxShawdow'>
@@ -112,11 +112,11 @@ const Narbar = () => {
                             renderInput={(params) => <TextField {...params} type='text' autoComplete='off' placeholder='Tìm Kiếm'
                             />}
                             onChange={(event, newValue) => {
-                                if(newValue){
-                                    const {link} = newValue;
-                                navigate(`/${link}`, {
-                                    relative: 'route'
-                                });
+                                if (newValue) {
+                                    const { link } = newValue;
+                                    navigate(`/${link}`, {
+                                        relative: 'route'
+                                    });
                                 }
                             }}
                         />
