@@ -17,12 +17,12 @@ function Collegesister() {
                             src="https://img-zlr1.tv360.vn/image1/2020_09_23/1600822442611/f6b738c3d05a_480_270.png" decoding="async"
                         />
                     </div>
-                    <div>
+                    <Link to=''>
                         <img className='coller-sport'
                             alt='Outdoor HD'
                             src='https://img-zlr1.tv360.vn/image1/2020/11/12/10/1605151414697/e4570232b05d_480_270.png'
                         />
-                    </div>
+                    </Link>
                     <div>
                         <img className='coller-sport'
                             alt='AFN HD'

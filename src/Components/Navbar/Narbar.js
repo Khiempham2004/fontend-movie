@@ -6,7 +6,7 @@ import { MDBAccordion, MDBAccordionItem, MDBIcon } from 'mdb-react-ui-kit';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
+import Autocomplete from '@mui/material/Autocomplete';  
 import { useNavigate } from "react-router-dom";
 
 const Narbar = () => {
@@ -109,8 +109,7 @@ const Narbar = () => {
                             disablePortal
                             options={contextSuggest}
                             sx={{ width: 330 }}
-                            renderInput={(params) => <TextField {...params} type='text' autoComplete='off' placeholder='Tìm Kiếm'
-                            />}
+                            renderInput={(params) => <TextField {...params} type='text' autoComplete='off' placeholder='Tìm Kiếm' />}
                             onChange={(event, newValue) => {
                                 if (newValue) {
                                     const { link } = newValue;

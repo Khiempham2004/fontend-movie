@@ -4,6 +4,7 @@ import './Style.css'
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 
 function ReduxControl() {
+    
     return (
         <div className="propose-redux">
             <div className="redux-image">

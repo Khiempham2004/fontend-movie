@@ -30,18 +30,22 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index path="/" element={<><Home /></>} />
-        <Route index path='/packages' element={<>
-          <Narbar />
-          <Packages />
-          <Footer />
-        </>} />
+        <Route path="/" element={<><Home /></>} />
+        <Route path='/packages' element={
+          <>
+            <Narbar />
+            <Packages />
+            <Footer />
+          </>}
+        />
         <Route exact path='/Following' element={<Following />} />
-        <Route exact path='/movie/tan-tieu-ngao-giang-ho' element={<>
-          <Narbar />
-          <ReduxControl />
-          <Footer />
-        </>} />
+        <Route exact path='/movie/tan-tieu-ngao-giang-ho' element={
+          <>
+            <Narbar />
+            <ReduxControl />
+            <Footer />
+          </>}
+        />
         <Route exact path='/movie/tan-tieu-ngao-giang-ho' element={<>
           <Narbar />
           <ReduxGangster />
@@ -109,9 +113,9 @@ function App() {
           <Footer />
         </>} />
         <Route path='/login' element={<>
-          <Narbar />
+          {/* <Narbar /> */}
           <Login />
-          <Footer />
+          {/* <Footer /> */}
         </>} />
         <Route exact path="/phim" element={<>
           <Narbar />

@@ -110,16 +110,16 @@ function TVComponent() {
                         />
                     </div>
                     <div>
-                    <img className='component-effect'
-                    alt="VTV8 HD" 
-                    src="https://img-zlr1.tv360.vn/image1/2020_09_21/160069439043/38ef3b4d4000_480_270.png" decoding="async"
-                    />
+                        <img className='component-effect'
+                            alt="VTV8 HD"
+                            src="https://img-zlr1.tv360.vn/image1/2020_09_21/160069439043/38ef3b4d4000_480_270.png" decoding="async"
+                        />
                     </div>
                     <div>
-                    <img className='component-effect'
-                    alt="VTV9 HD" 
-                    src="https://img-zlr1.tv360.vn/image1/2020_09_23/1600822568115/7f3b077aabfc_480_270.png" decoding="async" 
-                    />
+                        <img className='component-effect'
+                            alt="VTV9 HD"
+                            src="https://img-zlr1.tv360.vn/image1/2020_09_23/1600822568115/7f3b077aabfc_480_270.png" decoding="async"
+                        />
                     </div>
                 </li>
             </div>

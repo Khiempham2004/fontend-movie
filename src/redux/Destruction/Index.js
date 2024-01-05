@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom'
 import './Style.css'
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 
 function Destruction() {
+    
     return (
         <div className="propose-redux">
             <div className="redux-image">
