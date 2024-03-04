@@ -1,6 +1,5 @@
 import './logo.svg';
 import './App.css';
-import React, { useState } from 'react'
 import Narbar from './Components/Navbar/Narbar';
 import Footer from './Components/Footer/Footer';
 import Login from './Components/Login/Login';
@@ -113,9 +112,7 @@ function App() {
           <Footer />
         </>} />
         <Route path='/login' element={<>
-          {/* <Narbar /> */}
           <Login />
-          {/* <Footer /> */}
         </>} />
         <Route exact path="/phim" element={<>
           <Narbar />

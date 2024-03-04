@@ -3,7 +3,7 @@
     display: flex;
     margin-right: auto; 
     list-style: none;
-    padding: 0;
+    /* padding: 0; */
     position: relative;
 }
 .mySlides {

@@ -11,9 +11,6 @@ const listForm = {
 const isEmptyValue = (value) => {
     return !value || value.trim().length < 1;
 }
-// const isEmailValid = (Email) => {
-//     return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(Email);
-// }
 
 function Login() {
     const [formValue, setFormValue] = useState(listForm)
@@ -23,13 +20,6 @@ function Login() {
     const validateForm = () => {
         const error = {};
 
-        // if (isEmptyValue(formValue.Email)) {
-        //     error["Email"] = "";
-        // } else {
-        //     if (!isEmailValid(formValue.Email)) {
-        //         error["Email"] = "";
-        //     }
-        // }
         if (isEmptyValue(formValue.Password)) {
             error["Password"] = "";
         }

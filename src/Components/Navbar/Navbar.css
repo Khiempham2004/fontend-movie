@@ -84,7 +84,6 @@
     align-items: center;
     height: 45px;
     padding-left: 50px;
-    /* width: 1850px; */
     padding: 1px 1px 10px 20px;
 }
 li {
@@ -139,9 +138,7 @@ a{
 
 .header-login input {
     border: solid 1px #dbdbdb;
-    /* outline: none; */
     padding: 3px 10px 3px 26px;
-    /* z-index: 5; */
     color: #262626;
     font-size: 25px;
     border: 1px solid black ;

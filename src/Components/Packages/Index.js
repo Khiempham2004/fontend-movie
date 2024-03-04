@@ -5,13 +5,16 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import { Link } from 'react-router-dom'
+import { useState } from "react";
 
-const steps = [
-    'Chọn Gói',
-    'Thanh Toán',
-    'Kết Quả',
-];
 function Packages() {
+    const steps = [
+        'Chọn Gói',
+        'Thanh Toán',
+        'Kết Quả',
+    ];
+
+    const [stepUser , stepValue ] = useState(steps)
     return (
         <div>
             <h1 className="component-heading">Chọn gói</h1>

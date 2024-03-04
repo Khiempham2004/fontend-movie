@@ -111,12 +111,6 @@ return (
                             src="https://img-zlr1.tv360.vn/image1/2023/07/24/08/1690162259474/adb1472a2f6d_360_540.jpg" decoding="async"
                         />
                     </Link>
-                    {/* <div itemID={8}>
-                        <img className='d-block'
-                            alt="Điệp Vụ Kép - Inside Man"
-                            src="https://img-zlr1.tv360.vn/image1/2023/10/04/13/1696402473338/d2e66c79887f_360_540.jpg" decoding="async"
-                        />
-                    </div> */}
                 </div>
             </div>
             <div className='Slides'>
