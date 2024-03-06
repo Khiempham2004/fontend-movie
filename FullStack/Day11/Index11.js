@@ -1,7 +1,7 @@
-import express from "express"
-import mongoose from "mongoose";
-import bcrypt from 'bcrypt'
-
+import express from "express";
+import mongoose, { connect } from "mongoose";
+import bcrypt from 'bcrypt';
+import { Search } from "@mui/icons-material";
 const server = express();
 
 server.use(express.json());
@@ -18,6 +18,7 @@ const studentSchema = new mongoose.Schema({
 const StudentModel = mongoose.model("student", studentSchema)
 
 const userSchema = new Schema({
+    email: String,
     username: String,
     password: String,
 })
@@ -61,20 +62,21 @@ server.post("/student", async (req, res) => {
 const saltRounds = 10;
 server.use(express.json())
 
-server.post("/registers", async (req, res) => {
+server.post("/register", async (req, res) => {
     try {
-
-        const { username, password } = req.body;
+        const { email, username, password } = req.body;
         console.log(username);
         if (!username) throw new Error("username is required")
         if (!password) throw new Error("password is required")
+        if (!email) throw new Error("email is required")
+
 
         // Hasing
         const saltRounds = 10;
         const salt = await bcrypt.genSalt(saltRounds);
         const handlePassword = await bcrypt.hash(password, salt)
 
-        const newUser = await userModel({ username, password: handlePassword })
+        const newUser = await userModel({ email, username, password: handlePassword })
 
         await newUser.save()
         return res.status(200).send("Register successfully!")
@@ -85,37 +87,27 @@ server.post("/registers", async (req, res) => {
 })
 
 server.use(express.json())
-server.post("/Login", async (req, res) => {
+server.post("/login", async (req, res) => {
     try {
-        // const { email, password } = req.body;
-        // // console.log(email);
-        // // console.log(password);
-        // const currentEmailLogin = await userModel.findOne({ email: email });
-        // // console.log(currentEmailLogin);
-        // if (currentEmailLogin) throw new Error("email is required")
-
-        // // const salt = bcrypt.genSaltSync(saltRounds)
-        // const currentPassworLogin = await userModel.findOne({ password: password, email: email })
-        // // console.log(currentPassworLogin);
-        // // if (!currentPassworLogin) throw new Error("password is required")
-        // res.json({
-        //     code: 200,
-        //     messaege: "Login success",
-        //     email,
-        //     password,
-        // })
-
         const { email, password } = req.body;
-        // tìm thông tin user | tài khoản với email được gửi lên
-        const currentUser = await userModel.findOne({ email });
-        console.log(currentUser);
-        if (!currentUser) throw new Error("user not default");
+        console.log(req.body);
+        if (!email || !password) {
+            throw new Error("Email & password is required!")
+        }
 
-        const hashingPasswordLogin = bcrypt.hashSync(password, currentUser.salt);
-        // compare password
-        if (hashingPasswordLogin !== currentUser.password) throw new Error("Sai tài khoản hoặc mật khẩu");
+        const currentEmailLogin = await userModel.find({ email: email });
+        // console.log(currentEmailLogin);
 
+        if (!currentEmailLogin) throw new Error("email is required")
+
+        // const saltRounds = 10;
+        // const salt = bcrypt.genSaltSync(saltRounds);
+        // const hash = bcrypt.hashSync(currentEmailLogin , salt)
+        const hashingPasswordLogin = bcrypt.compare(currentEmailLogin);
+        // console.log(hashingPasswordLogin);
+        if (!hashingPasswordLogin) throw new Error("email & password not required")
         return res.status(201).send("Login successfully")
+
 
     } catch (error) {
         console.log("error :>>", error);
@@ -125,6 +117,8 @@ server.post("/Login", async (req, res) => {
         })
     }
 })
+
+
 mongoose
     .connect('mongodb://127.0.0.1:27017/fullStack')
     .then(server.listen(3001, () => { console.log("server is running") }));

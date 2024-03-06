@@ -24,6 +24,7 @@ import Destruction from './redux/Destruction/Index';
 import ReduxGangster from './redux/ReduxGangster/Index';
 import ReduxControl from './redux/ReduxControl/Index';
 import Packages from './Components/Packages/Index';
+import Register from './Components/Register/Register';
 
 function App() {
   return (
@@ -111,8 +112,8 @@ function App() {
           <ComponentMovies />
           <Footer />
         </>} />
-        <Route path='/login' element={<>
-          <Login />
+        <Route path='/register' element={<>
+          <Register />
         </>} />
         <Route exact path="/phim" element={<>
           <Narbar />

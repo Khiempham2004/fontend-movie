@@ -134,8 +134,8 @@ const Narbar = () => {
                     </div>
                     <div className='header-userName'>
                         <ul>
-                            <li title='Đăng Nhập'>
-                                <Link to="/login"><i className='bx bxs-user bx-md'></i></Link>
+                            <li title='Đăng Ký'>
+                                <Link to="/register"><i className='bx bxs-user bx-md'></i></Link>
                             </li>
                         </ul>
                     </div>
