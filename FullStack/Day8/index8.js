@@ -9,8 +9,10 @@ import { asyncCatch } from './utils/trycacth.js';
 import { authen } from './utils/authen.js'
 import authController from './controler/auth.controller.js';
 
-const app = express();
 dotenv.config();
+
+const app = express();
+const PORT = process.env.Port || 3001;
 app.use(express.json());
 app.use(morgan('combined')); // loger 
 
@@ -19,9 +21,9 @@ app.use("/auth" , authController)
 
 
 app.use("/index" , (req, res) => {
-    res.status(200).send("Hello emiu của anh")
+    res.status(200).send("I want to Learn web programming at Mindx! ")
 })
 
 mongoose
     .connect('mongodb://127.0.0.1:27017/fullStack')
-    .then(app.listen(3000, () => { console.log("server is running") }));
+    .then(app.listen(PORT, () => { console.log(`server is running ${PORT}`) }));

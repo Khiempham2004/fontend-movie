@@ -1,22 +1,43 @@
-.Channel-header{
+.Channel-header {
     margin-top: 40px;
 }
-.Channel-heading{
+
+.Channel-heading {
     margin-left: 45px;
     font-size: 35px;
     display: flex;
     color: aliceblue;
 }
-.Channel-context{
+
+.Channel-context {
     display: flex;
     justify-content: center;
     width: 1490px;
     /* margin-left: 5px ; */
 }
-.channel-block-css{
+
+.channel-block-css {
     display: block;
     width: 218px;
     margin-left: 25px;
-    border:  2px solid ;
-    background-color:slategrey; 
+    border: 2px solid;
+    background-color: slategrey;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.zoom {
+    padding: 50px;
+    transition: transform .4s;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.channel-block-css:hover {
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(0.5);
+    transform: scale(1.5);
 }

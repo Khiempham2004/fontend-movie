@@ -8,6 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 const Narbar = () => {
     const contextSuggest = [
@@ -67,6 +68,18 @@ const Narbar = () => {
         })
         navSetSubSuggest(filterNav)
     }
+    const [suggestSearch, setSuggestSearch] = useState('')
+    const [data, setData] = useState(null);
+    const search = async (event) => {
+        event.preventDefault();
+        try {
+            const setSearch = await axios.post("http://localhost:3001/search", {
+            })
+            console.log("search ", setSearch.data);
+        } catch (error) {
+            console.log("error :>>", error);
+        }
+    }
 
     return (
         <div className='fixed-top'>
@@ -84,7 +97,7 @@ const Narbar = () => {
                 </div>
                 <div className='heading'>
                     <div className='heading-menu'>
-                        <Link to='/' >
+                        <Link to='/trangchu' >
                             <div title='Trang Chủ' className='Head-Tv360' >Trang Chủ</div>
                         </Link>
                         <br></br>
@@ -119,6 +132,7 @@ const Narbar = () => {
                                 }
                             }}
                         />
+
                         <i className='bx bx-search-alt-2 bx-ms'></i>
                     </div>
                 </div>
@@ -134,8 +148,8 @@ const Narbar = () => {
                     </div>
                     <div className='header-userName'>
                         <ul>
-                            <li title='Đăng Ký'>
-                                <Link to="/register"><i className='bx bxs-user bx-md'></i></Link>
+                            <li title='Đăng nhập'>
+                                <Link to="/login"><i className='bx bxs-user bx-md'></i></Link>
                             </li>
                         </ul>
                     </div>

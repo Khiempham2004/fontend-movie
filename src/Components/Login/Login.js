@@ -17,7 +17,7 @@ const isEmptyValue = (value) => {
 function Login() {
     const [formValue, setFormValue] = useState(listForm)
     const [formError, setFormError] = useState({});
-    const [userName, setUserName] = useState('')
+    const [isUsername , setUsername] = useState('')
     const [passWord, setPassword] = useState('')
     const navigate = useNavigate();
 
@@ -37,13 +37,6 @@ function Login() {
             Email: value,
         });
     };
-    const handleUserName = (event) => {
-        const { value } = event.target;
-        setFormValue({
-            ...formValue,
-            UserName: value,
-        })
-    }
     const handlePassword = (event) => {
         const { value } = event.target;
         setFormValue({
@@ -55,9 +48,9 @@ function Login() {
     const handleClickForm = (event) => {
         event.preventDefault()
         if (validateForm()) {
-            navigate("/");
+            navigate("/trangchu");
             console.log("formValue", formValue)
-            alert('You have success logged ! ');
+            alert('you have login successfully logged ! ');
         } else {
             alert('This is an error alert - check it out')
         }
@@ -66,7 +59,7 @@ function Login() {
     const getUserLogin = async () => {
         try {
             const response = await axios.post('http://localhost:3000/login' , {
-                userName,
+                isUsername,
                 passWord
             });
             console.log(response);
@@ -77,19 +70,14 @@ function Login() {
 
     return (
         <div>
-            {/* <div className='login-heading'>
-                <h1 className='title'>Đăng Nhập</h1>
+            <div className='login-heading'>
+                <h1 className='title'>Login</h1>
                 <form id='form' className='flex' onSubmit={handleClickForm} >
                     <br></br>
                     <div className='form-check'>
                         <label htmlFor='userName' className='form-label'>Email:</label>
                         <br></br>
                         <input type='text' value={formValue.Email} onChange={handleEmail} placeholder='Email' name='Email' />
-                    </div>
-
-                    <div className='form-check'>
-                        <label className='form-label'>UserName :</label>
-                        <input type='text' value={formValue.UserName} onChange={handleUserName} placeholder='Username' name='Username' />
                     </div>
 
                     <div className='form-group'>
@@ -106,7 +94,7 @@ function Login() {
                     >Tiếp Tục
                     </button>
                 </form>
-            </div> */}
+            </div>
         </div>
     );
 }

@@ -25,12 +25,16 @@ import ReduxGangster from './redux/ReduxGangster/Index';
 import ReduxControl from './redux/ReduxControl/Index';
 import Packages from './Components/Packages/Index';
 import Register from './Components/Register/Register';
-
+import { useState } from 'react';
+import { redirect } from 'react-router-dom';
 function App() {
+  const [isRegister, setRegister] = useState(false)
+  const [isLogin, setLogin] = useState(false)
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<><Home /></>} />
+        <Route path='/' element={<><Following/></>} />
+        <Route path="/trangchu" element={<><Home /></>} />
         <Route path='/packages' element={
           <>
             <Narbar />
@@ -38,7 +42,6 @@ function App() {
             <Footer />
           </>}
         />
-        <Route exact path='/Following' element={<Following />} />
         <Route exact path='/movie/tan-tieu-ngao-giang-ho' element={
           <>
             <Narbar />
@@ -112,8 +115,8 @@ function App() {
           <ComponentMovies />
           <Footer />
         </>} />
-        <Route path='/register' element={<>
-          <Register />
+        <Route path='/login' element={<>
+          <Login />
         </>} />
         <Route exact path="/phim" element={<>
           <Narbar />

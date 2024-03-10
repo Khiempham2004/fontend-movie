@@ -26,11 +26,6 @@ const users = [
 
 app.use(express.json())
 
-async function connectDB() {
-  await mongoose.connect('mongodb://127.0.0.1/hocMongoDB')
-}
-
-connectDB();
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
@@ -55,10 +50,10 @@ app.post("/users", (req, res) => {
 app.put("/users/:email", (req, res) => {
   const { email, password } = req.params;
   const filedUpdate = req.body;
-  console.log("body", body);
+  console.log("body", req.body);
   const filedUserId = users.find(user => user.email === email && user.password === password)
-  for (const key in filedUpdate) {
-    filedUserId[key] == filedUpdate[key]
+  if (!filedUserId) {
+    throw new Error("userId is required")
   }
   res.status(200).send(users)
 })

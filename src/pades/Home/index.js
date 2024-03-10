@@ -7,15 +7,13 @@ import Propose from '../../Components/Propose/Propose';
 import MainSlider from '../../Components/MainSlider/MainSlider';
 import Footer from '../../Components/Footer/Footer'
 import Channel from '../../Components/Channel/Channel';
-import Register from '../../Components/Register/Register';
-
 function Home(props) {
 
     return (
         <div>
-            <Navbar/>
+            <Navbar />
             <Avatar />
-            <Channel/>
+            <Channel />
             <Propose />
             <MainSlider />
             <MovieCarousel />

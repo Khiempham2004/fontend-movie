@@ -1,9 +1,12 @@
 import express from "express";
 import mongoose, { connect } from "mongoose";
 import bcrypt from 'bcrypt';
-import { Search } from "@mui/icons-material";
-const server = express();
+import bodyPaser from 'body-parser';
+import dotenv from 'dotenv';
 
+dotenv.config();
+
+const server = express();
 server.use(express.json());
 // server.use(morgan("combined"))
 
@@ -23,8 +26,14 @@ const userSchema = new Schema({
     password: String,
 })
 
-const userModel = mongoose.model("Login", userSchema)
+const userModel = mongoose.model("register", userSchema)
 
+const loginSchema = new Schema({
+    email: String,
+    password: String,
+})
+
+const loginModel = mongoose.model("login", loginSchema)
 
 server.post("/student", async (req, res) => {
     const { skip, limit } = req.body;
@@ -76,7 +85,7 @@ server.post("/register", async (req, res) => {
         const salt = await bcrypt.genSalt(saltRounds);
         const handlePassword = await bcrypt.hash(password, salt)
 
-        const newUser = await userModel({ email, username, password: handlePassword })
+        const newUser = await userModel.create({ email, username, password: handlePassword })
 
         await newUser.save()
         return res.status(200).send("Register successfully!")
@@ -95,18 +104,22 @@ server.post("/login", async (req, res) => {
             throw new Error("Email & password is required!")
         }
 
-        const currentEmailLogin = await userModel.find({ email: email });
-        // console.log(currentEmailLogin);
+        const currentEmailLogin = await loginModel.findOne({ email: email });
+        console.log(currentEmailLogin);
 
-        if (!currentEmailLogin) throw new Error("email is required")
+        if (!currentEmailLogin) throw new Error("email is required");
 
-        // const saltRounds = 10;
-        // const salt = bcrypt.genSaltSync(saltRounds);
-        // const hash = bcrypt.hashSync(currentEmailLogin , salt)
-        const hashingPasswordLogin = bcrypt.compare(currentEmailLogin);
-        // console.log(hashingPasswordLogin);
-        if (!hashingPasswordLogin) throw new Error("email & password not required")
-        return res.status(201).send("Login successfully")
+        const saltRounds = 10;
+        const salt = bcrypt.genSaltSync(saltRounds);
+        const hash = bcrypt.hashSync(password, salt);
+        const userLogin = await bcrypt.compare(currentEmailLogin.password, hash, function (err, result) {
+            // result == true 
+            if (!err) throw new Error("error comparing password")
+            // console.log("result :>>", result);
+            if (!result) throw new Error("result is required!")
+        });
+
+        return res.status(200).send("Login succesfully")
 
 
     } catch (error) {
@@ -118,7 +131,18 @@ server.post("/login", async (req, res) => {
     }
 })
 
+server.post("/upload", async (req, res) => {
+    const [skip , limit] = req.body;
+    try {
+        const size = 10;
+        const uploadImage = await studentSchema.find({
+            
+        })
+    } catch (error) {
+
+    }
+})
 
 mongoose
     .connect('mongodb://127.0.0.1:27017/fullStack')
-    .then(server.listen(3001, () => { console.log("server is running") }));
+    .then(server.listen(3002, () => { console.log("server is running") }));

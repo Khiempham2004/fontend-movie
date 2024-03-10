@@ -15,13 +15,13 @@ const isEmptyRegister = (value) => {
     return !value || value.trim().length < 1;
 }
 
-function Register(registerId) {
+function Register() {
     const [formRegister, setFormRegister] = useState(listForms)
     const [formError, setFormError] = useState({});
-    const [email , setEmail] = useState('')
+    const [email, setEmail] = useState('')
     const [userName, setUserName] = useState('')
     const [passWord, setPassword] = useState('')
-    const navigate = useNavigate();
+    const navigate = useNavigate('');
 
     const validateForm = () => {
         const error = {};
@@ -60,7 +60,7 @@ function Register(registerId) {
     const handleClickForm = (event) => {
         event.preventDefault()
         if (validateForm()) {
-            navigate("/");
+            navigate("/login");
             console.log("formValue", formRegister)
             alert('You have Register successfully logged ! ');
         } else {
@@ -68,35 +68,35 @@ function Register(registerId) {
         }
     }
 
-    const [appRegister, setAppRegister] = useState('http://localhost:3000/register');
-    const [data , setData] = useState('null')
-    useEffect(() =>{
-        const connectRegister =  createRegister(appRegister , registerId);
-        connectRegister.connect();
-        return () =>{
-            connectRegister.disconnect();
-        };
-    } , [registerId , appRegister]);
+    const [appRegister, setAppRegister] = useState('');
+    const [data, setData] = useState('null')
+    // useEffect(() =>{
+    //     const connectRegister =  createRegister(appRegister , registerId);
+    //     connectRegister.connect();
+    //     return () =>{
+    //         connectRegister.disconnect();
+    //     };
+    // } , [registerId , appRegister]);
 
-    fetch('http://localhost:3000/register')
-      .then(response => response.json())
-      .then(result => {
-        // Update state with the fetched data
-        setData(result);
-      });
-    // const userRegister = async (event) => {
-    //     event.preventDefault()
-    //     try {
-    //         const response = await axios.post('http://localhost:3000/register', {
-    //             email,
-    //             userName,
-    //             passWord
-    //         });
-    //         console.log('register succesfully' , response.data);
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // }
+    // fetch('http://localhost:3000/register')
+    //   .then(response => response.json())
+    //   .then(result => {
+    //     // Update state with the fetched data
+    //     setData(result);
+    //   });
+    const userRegister = async (event) => {
+        event.preventDefault()
+        try {
+            const response = await axios.post('http://localhost:3002/register', {
+                email: formRegister.Email,
+                userName: formRegister.UserName,
+                passWord: formRegister.Password,
+            });
+            console.log('register succesfully', response.data);
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
 
     return (
@@ -106,25 +106,26 @@ function Register(registerId) {
                 <form id='form' className='flex' onSubmit={handleClickForm} >
                     <br></br>
                     <div className='form-check'>
-                        <label htmlFor='userName' className='form-label'>Email:</label>
+                        <label htmlFor='userName' className='form-label'>Email :</label>
                         <br></br>
                         <input type='text' value={formRegister.Email} onChange={handleEmail} placeholder='Email' name='Email' />
                     </div>
                     <br></br>
                     <div className='form-User'>
-                        <label className='form-label'>UserName :</label>
+                        <label className='form-label'>UserName : </label>
                         <input type='text' value={formRegister.UserName} onChange={handleUserName} placeholder='Username' name='Username' />
                     </div>
 
                     <div className='form-group'>
                         <label htmlFor='pwd' className='checkvar'>
-                            Password:
+                            Password :
                         </label>
                         <br></br>
                         <input type='passWord' value={formRegister.Password} onChange={handlePassword} placeholder='Password' name='enterPassword' />
                     </div>
-                    <br></br>
+
                     <button
+                        id='registerBtn'
                         type='submit'
                         className='btn btn-primary'
                     >Tiếp Tục

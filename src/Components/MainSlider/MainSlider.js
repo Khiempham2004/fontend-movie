@@ -5,44 +5,6 @@ import { MDBCarousel, MDBCarouselItem } from 'mdb-react-ui-kit';
 import './MainSlider.css'
 
 function MainSlider() {
-    // const slides = [
-        
-    // ]
-    // const [slideIndex, setSlideIndex] = useState(0);
-
-    // const nextSlide = () => {
-    //     setSlideIndex((slideIndex + 1) % slides.length);
-    // };
-
-    // const prevSlide = () => {
-    //     setSlideIndex((slideIndex - 1 + slides.length) % slides.length);
-    // };
-
-    // // Lắng nghe phím mũi tên sang phải
-    // document.addEventListener("keydown", event => {
-    //     if (event.keyCode === 39) {
-    //         nextSlide();
-    //     }
-    // });
-
-    // // Lắng nghe phím mũi tên sang trái
-    // document.addEventListener("keydown", event => {
-    //     if (event.keyCode === 37) {
-    //         prevSlide();
-    //     }
-    //     const updateSlide = () => {
-    //         setSlideIndex((slideIndex + 1) % slides.length);
-    //       };
-          
-    //       const interval = setInterval(updateSlide, 2000);
-          
-    //       // Tắt interval khi người dùng nhấp vào slide
-    //       document.addEventListener("click", event => {
-    //         if (event.target.classList.contains("slide")) {
-    //           clearInterval(interval);
-    //         }
-    //       });
-    // });
 
 return (
     <section>
@@ -54,19 +16,6 @@ return (
                     </Link>
                 </div>
                 <div className='consion-main'>
-                <div>
-                    {/* <MDBCarousel showControls >
-                            <MDBCarouselItem  >
-                                <img src='https://img-zlr1.tv360.vn/image1/2023/10/27/14/169839107337/2447cacc55ba_360_540.jpg' className='d-block w-100' alt='...' />
-                            </MDBCarouselItem>
-                            <MDBCarouselItem >
-                                <img src='https://img-zlr1.tv360.vn/image1/2023/11/17/10/1700191207566/cf49daeccef8_360_540.jpg' className='d-block w-100' alt='...' />
-                            </MDBCarouselItem>
-                            <MDBCarouselItem >
-                                <img src='https://img-zlr1.tv360.vn/image1/2023/11/13/17/1699872938872/eafe5e7d0c76_360_540.jpg' className='d-block w-100' alt='...' />
-                            </MDBCarouselItem>
-                        </MDBCarousel> */}
-                </div>
                     <Link>
                         <img className='d-block'
                             src="https://img-zlr1.tv360.vn/image1/2023/10/27/14/169839107337/2447cacc55ba_360_540.jpg" decoding="async"
@@ -112,10 +61,6 @@ return (
                         />
                     </Link>
                 </div>
-            </div>
-            <div className='Slides'>
-            {/* <button className="context-left" onclick="plusDivs(-1)">&#10094;</button>
-            <button className="context-right" onclick="plusDivs(1)">&#10095;</button> */}   
             </div>
         </div>
     </section>
