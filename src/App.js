@@ -33,7 +33,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<><Following/></>} />
+        <Route path='/' element={<><Following /></>} />
         <Route path="/trangchu" element={<><Home /></>} />
         <Route path='/packages' element={
           <>

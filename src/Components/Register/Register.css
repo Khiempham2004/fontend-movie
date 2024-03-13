@@ -1,64 +1,71 @@
-.login-heading {
-    padding-left: 600px;
-    font-size: 5px;
-    background-color: var(--theme-ui-colors-popup, #141415);
-    border-right: 520px solid black;
-    border-left: 490px solid black;
-    border-top: 30px solid black;
-    margin: 90px 0px 20px;
-    padding: 10px 40px 20px;
+body {
     font-family:'Times New Roman', Times, serif;
+    /* background-color: black; */
 }
-
-.title {
-    font-size: 45px;
+h1{
     color: white;
-    padding-left: 140px;
+    padding-left: 650px;
+    font-size: 50px;
+}
+.singofLogin{
+    padding-left: 480px;
+}
+.container {
+    padding: 16px;
+    background-color: white;
 }
 
-.form-label {
-    color: aliceblue;
-    font-size: 30px;
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+input[type=text],
+input[type=username] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
 }
 
-.checkvar {
-    color: aliceblue;
-    font-size: 30px;
+input[type=text]:focus,
+input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
 }
 
-.form-check {
-    font-size: 28px;
-    padding-right: 100px;
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
 }
 
-.form-User {
-    font-size: 28px;
-    padding-left: 43px;
-}
-.form-User input {
-    border-radius: 8px;
-    font-size: 30px;
-}
-.form-check input {
-    border-radius: 8px;
-    font-size: 30px;
+.registerbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
 }
 
-.form-group {
-    padding-top: 15px;
-    font-size: 28px;
-    padding-left: 42px;
+.registerbtn:hover {
+    opacity: 1;
 }
 
-.form-group input {
-    border-radius: 8px;
-    font-size: 30px;
+a {
+    color: dodgerblue;
 }
 
-.btn {
-    padding: 5px 15px 5px 15px;
-    margin-left: 150px;
-    margin-top: 20px;
-    font-size: 25px;
-    background-color: red;
+.signin {
+    background-color: #f1f1f1;
+    text-align: center; 
 }

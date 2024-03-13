@@ -148,7 +148,7 @@ const Narbar = () => {
                     </div>
                     <div className='header-userName'>
                         <ul>
-                            <li title='Đăng nhập'>
+                            <li title='logout'>
                                 <Link to="/login"><i className='bx bxs-user bx-md'></i></Link>
                             </li>
                         </ul>

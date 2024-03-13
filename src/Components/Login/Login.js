@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect } from 'react'
 import { useState } from 'react';
-import  './Login.css'
+import './Login.css'
 import { useNavigate } from "react-router-dom";
 import MuiAlert from '@mui/material/Alert';
 import axios from 'axios';
 
 const listForm = {
-    Email: "",
-    UserName: "",
-    Password: "",
+    // Email: "",
+    userName: "",
+    password: "",
 }
 const isEmptyValue = (value) => {
     return !value || value.trim().length < 1;
@@ -17,75 +17,105 @@ const isEmptyValue = (value) => {
 function Login() {
     const [formValue, setFormValue] = useState(listForm)
     const [formError, setFormError] = useState({});
-    const [isUsername , setUsername] = useState('')
+    const [userName, setUserName] = useState('')
     const [passWord, setPassword] = useState('')
+    const [userData, setUserData] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+
     const navigate = useNavigate();
 
     const validateForm = () => {
         const error = {};
 
-        if (isEmptyValue(formValue.Password)) {
+        if (isEmptyValue(formValue.password)) {
             error["Password"] = "";
         }
         setFormError(error);
         return Object.keys(error).length === 0;
     }
-    const handleEmail = (event) => {
+    const handleUsername = (event) => {
         const { value } = event.target;
         setFormValue({
             ...formValue,
-            Email: value,
+            username: value,
         });
     };
     const handlePassword = (event) => {
         const { value } = event.target;
         setFormValue({
             ...formValue,
-            Password: value,
+            password: value,
         });
     };
-
-    const handleClickForm = (event) => {
+    const handleClickForm = async (event) => {
         event.preventDefault()
         if (validateForm()) {
             navigate("/trangchu");
             console.log("formValue", formValue)
-            alert('you have login successfully logged ! ');
+            alert('You have success logged ! ');
         } else {
             alert('This is an error alert - check it out')
         }
     }
+    // const getUser = async () => {
+    //     try {
+    //         const response = await axios.post('/http://localhost:3001/logins');
+    //         console.log(response);
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    // }
 
-    const getUserLogin = async () => {
-        try {
-            const response = await axios.post('http://localhost:3000/login' , {
-                isUsername,
-                passWord
-            });
-            console.log(response);
-        } catch (error) {
-            console.error(error);
-        }
-    }
+    useEffect(() => {
+        const getUser = async () => {
+            try {
+                const response = await fetch('http://localhost:3001/logins'); // Replace with your actual API endpoint
+                if (!response.ok) {
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+
+                const data = await response.json();
+                setUserData(data); 
+            } catch (err) {
+                console.error('Error fetching user data:', err);
+                setError(err.message); 
+            } finally {
+                setIsLoading(false); 
+            }
+        };
+
+        getUser();
+    }, []); 
+
+    // Display content based on state
+    // if (isLoading) {
+    //     return <div>Loading user data...</div>;
+    // }
+
+    // if (error) {
+    //     return <div>Error: {error}</div>; // Display error message to the user
+    // }
+
+
+
 
     return (
         <div>
             <div className='login-heading'>
-                <h1 className='title'>Login</h1>
+                <h1 className='title'>Đăng Nhập</h1>
                 <form id='form' className='flex' onSubmit={handleClickForm} >
                     <br></br>
                     <div className='form-check'>
-                        <label htmlFor='userName' className='form-label'>Email:</label>
+                        <label htmlFor='userName' className='form-label'>Username : </label>
                         <br></br>
-                        <input type='text' value={formValue.Email} onChange={handleEmail} placeholder='Email' name='Email' />
+                        <input type='text' value={formValue.Email} onChange={handleUsername} placeholder='Username' name='Username' />
                     </div>
 
                     <div className='form-group'>
-                        <label htmlFor='pwd' className='checkvar'>
-                            Password:
-                        </label>
+                        <label htmlFor='pwd' className='checkvar'>Password: </label>
                         <br></br>
-                        <input type='passWord' value={formValue.Password} onChange={handlePassword} placeholder='Password' name='enterPassword' />
+                        <input type='passWord' value={formValue.password} onChange={handlePassword} placeholder='Password' name='enterPassword' />
                     </div>
                     <br></br>
                     <button

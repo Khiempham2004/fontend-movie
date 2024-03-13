@@ -1,20 +1,26 @@
-.fixed-top{
+body {
+    background-color: black;
+}
+
+.fixed-top {
     background-color: black;
     position: fixed;
     font-size: 120px;
     width: 1580px;
 }
+
 .Container {
-    display:flex;
-    justify-content:space-around;
+    display: flex;
+    justify-content: space-around;
     text-align: center;
     font-size: 20px;
     padding-left: 20px;
-    padding-right:64px;
+    padding-right: 64px;
     height: 55px;
     z-index: 3;
     margin-top: 15px;
 }
+
 .boxShawdow {
     display: flex;
     justify-content: center;
@@ -23,21 +29,24 @@
     box-sizing: border-box;
     margin: 0;
 }
+
 .boxShawdow-logo {
     box-sizing: border-box;
     margin: 0;
     margin-right: 5px;
     font-size: 20px;
 }
-.Avarta-login{
+
+.Avarta-login {
     width: 30px;
     margin-bottom: 20px;
-    margin-left:20 ;
+    margin-left: 20;
 }
+
 .heading {
     display: flex;
     text-align: center;
-    flex:3;
+    flex: 3;
     margin-right: 100px;
     justify-content: space-between;
     height: 60px;
@@ -45,40 +54,46 @@
 }
 
 .heading-menu {
-    flex:3;
+    flex: 3;
     justify-content: space-between;
-    display: flex;  
+    display: flex;
     margin-top: 10px;
 }
-.Head-Tv360{
+
+.Head-Tv360 {
     color: #dbdbdb;
 }
-.Head-movies{
+
+.Head-movies {
     color: #dbdbdb;
 }
-.Head-videos{
+
+.Head-videos {
     color: #dbdbdb;
     padding-right: 10px;
 }
-.Head-hbo-go{
+
+.Head-hbo-go {
     color: #dbdbdb;
 }
 
 .a {
-    color: rgba(255,255,255,0.87);
+    color: rgba(255, 255, 255, 0.87);
 }
 
 .Head-movie {
-    color:white;
+    color: white;
 }
+
 .header {
     justify-content: center;
-    flex:3;
+    flex: 3;
     display: block;
     top: 5px;
-    position:relative;
+    position: relative;
     right: 10px;
 }
+
 .header-search {
     display: flex;
     align-items: center;
@@ -86,26 +101,29 @@
     padding-left: 50px;
     padding: 1px 1px 10px 20px;
 }
-li {
-    list-style: none;
-} 
-a{
-    text-decoration: none;
-}
-.header-input{
+.header-input {
     margin-left: 10px;
     font-size: 10px;
     color: #dbdbdb;
 }
-.header-search .header-input{
+
+.header-search .header-input {
     background-color: white;
-    font-size: 30px;
-    border-radius: 30px;
+    font-size: 10px;
+    border-radius: 30px ;
 }
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 .header-search i.bx-search-alt-2 {
     position: absolute;
     z-index: 15;
-    color:#262626;
+    color: #262626;
     font-size: 20px;
     padding-left: 8px;
 }
@@ -115,25 +133,28 @@ a{
     background-color: red;
     border-radius: 10px;
 }
+
 .header-icon {
     display: flex;
-    justify-content:space-around;
-    flex:2;
+    justify-content: space-around;
+    flex: 2;
     margin-left: 80px;
-    padding : 10px 10px; 
+    padding: 10px 10px;
     cursor: pointer;
     border-radius: 4;
     color: #dbdbdb;
 }
-.header-bell{
+
+.header-bell {
     display: flex;
     justify-content: center;
 }
+
 .header-userName {
     display: block;
     opacity: 1;
     right: 80px;
-    top:100%;
+    top: 100%;
 }
 
 .header-login input {
@@ -141,15 +162,16 @@ a{
     padding: 3px 10px 3px 26px;
     color: #262626;
     font-size: 25px;
-    border: 1px solid black ;
+    border: 1px solid black;
     border-radius: 15px;
     flex-direction: column;
 }
+
 .header-login button {
     background-color: red;
-    color:#fafafa; 
+    color: #fafafa;
     border-radius: 10px;
-    padding: 15px 70px 20px 90px; 
+    padding: 15px 70px 20px 90px;
     overflow: hidden;
     text-decoration: none;
 }

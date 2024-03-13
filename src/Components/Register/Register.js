@@ -68,22 +68,22 @@ function Register() {
         }
     }
 
-    const [appRegister, setAppRegister] = useState('');
-    const [data, setData] = useState('null')
-    // useEffect(() =>{
-    //     const connectRegister =  createRegister(appRegister , registerId);
-    //     connectRegister.connect();
-    //     return () =>{
-    //         connectRegister.disconnect();
-    //     };
-    // } , [registerId , appRegister]);
+    // const [appRegister, setAppRegister] = useState('');
+    // const [data, setData] = useState('null')
+    // // useEffect(() =>{
+    // //     const connectRegister =  createRegister(appRegister , registerId);
+    // //     connectRegister.connect();
+    // //     return () =>{
+    // //         connectRegister.disconnect();
+    // //     };
+    // // } , [registerId , appRegister]);
 
-    // fetch('http://localhost:3000/register')
-    //   .then(response => response.json())
-    //   .then(result => {
-    //     // Update state with the fetched data
-    //     setData(result);
-    //   });
+    // // fetch('http://localhost:3000/register')
+    // //   .then(response => response.json())
+    // //   .then(result => {
+    // //     // Update state with the fetched data
+    // //     setData(result);
+    // //   });
     const userRegister = async (event) => {
         event.preventDefault()
         try {
@@ -97,39 +97,49 @@ function Register() {
             console.error(error);
         }
     }
+    // const [data, setData] = useState([]);
+
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await axios.post('http://localhost:3001/register');
+    //             setData(response.data);
+    //         } catch (error) {
+    //             console.error('register error :>>', Register.error);
+    //         }
+    //     };
+
+    //     fetchData();
+    // }, []);
+
 
 
     return (
         <div>
-            <div className='login-heading'>
-                <h1 className='title'>Register</h1>
-                <form id='form' className='flex' onSubmit={handleClickForm} >
-                    <br></br>
-                    <div className='form-check'>
-                        <label htmlFor='userName' className='form-label'>Email :</label>
+            <div className='register-heading'>
+                <form action='' onSubmit={handleClickForm}>
+                    <h1 className=''>Register</h1>
+                    <div class="container">
+                        <p className='singofLogin'>Please fill in this form to create an account.</p>
+                        <hr></hr>
+
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" value={formRegister.Email} onChange={handleEmail} placeholder="Enter Email" name="email" id="email" required />
+
+                        <label for="psw"><b>UserName</b></label><br></br>
+                        <input type="username" value={formRegister.UserName} onChange={handleUserName} placeholder="username" id='password' name="username" required />
                         <br></br>
-                        <input type='text' value={formRegister.Email} onChange={handleEmail} placeholder='Email' name='Email' />
-                    </div>
-                    <br></br>
-                    <div className='form-User'>
-                        <label className='form-label'>UserName : </label>
-                        <input type='text' value={formRegister.UserName} onChange={handleUserName} placeholder='Username' name='Username' />
+                        <label for="psw-repeat"><b>Password</b></label>
+                        <input type="password" value={formRegister.Password} onChange={handlePassword} placeholder="Password" name="psw-repeat" id="psw-repeat" required />
+                        <hr></hr>
+                        <p>By creating an account you agree to our <a href="/">Terms & Privacy</a>.</p>
+
+                        <button type="submit" className="registerbtn" >Register</button>
                     </div>
 
-                    <div className='form-group'>
-                        <label htmlFor='pwd' className='checkvar'>
-                            Password :
-                        </label>
-                        <br></br>
-                        <input type='passWord' value={formRegister.Password} onChange={handlePassword} placeholder='Password' name='enterPassword' />
+                    <div class="container signin">
+                        <p >Already have an account? <a href="/">Sign in</a>.</p>
                     </div>
-
-                    <button
-                        id='registerBtn'
-                        type='submit'
-                        className='btn btn-primary'
-                    >Tiếp Tục
-                    </button>
                 </form>
             </div>
         </div>

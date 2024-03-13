@@ -1,48 +1,59 @@
-.login-heading{
+.login-heading {
     padding-left: 600px;
-    font-size: 10px;
-    background-color: var(--theme-ui-colors-popup,#141415);
-    border-right : 520px solid black;
-    border-left:490px solid black ;
+    font-size: 14px;
+    /* Increase font size */
+    border-right: 520px solid black;
+    border-left: 490px solid black;
     border-top: 30px solid black;
+    background-color: gray;
     margin: 90px 0px 20px;
     padding: 10px 40px 20px;
 }
-.title{
+
+.title {
     font-size: 45px;
     color: white;
-    padding-left:50px;
+    padding-left: 100px;
 }
-.form-label{
-    color: aliceblue;
-    font-size: 30px;
-}
-.checkvar{
-    color: aliceblue;
-    font-size: 30px;
-}
-.form-check{
-    font-size: 28px;
-    padding-right: 100px;
 
+.checkvar {
+    color: aliceblue;
+    font-size: 20px;
 }
+
+.form-check {
+    /* padding-top: 15px; */
+    font-size: 20px;
+    padding-left: 32px;
+}
+
+.form-label {
+    color: aliceblue;
+    font-size: 20px;
+}
+
 .form-check input {
     border-radius: 8px;
-    font-size: 30px;
+    font-size: 20px;
 }
-.form-group{
+
+.form-group {
     padding-top: 15px;
-    font-size: 28px;
-    padding-left: 42px;
+    font-size: 20px;
+    padding-left: 32px;
 }
+
 .form-group input {
     border-radius: 8px;
-    font-size: 30px;
+    font-size: 20px;
 }
+
 .btn {
-    padding :5px 15px 5px 15px;
-    margin-left:150px;
+    padding: 10px 15px;
+    margin-left: 150px;
     margin-top: 20px;
-    font-size: 25px;
+    font-size: 20px;
     background-color: red;
+    color: white;
+    cursor: pointer;
 }
