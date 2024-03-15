@@ -3,13 +3,15 @@ import mongoose, { connect } from "mongoose";
 import bcrypt from 'bcrypt';
 import bodyPaser from 'body-parser';
 import dotenv from 'dotenv';
+import morgan from 'morgan'
 // import { hardKiller } from "init";
 import md5 from "md5"
 dotenv.config();
 
 const server = express();
 server.use(express.json());
-// server.use(morgan("combined"))
+server.use(morgan("combined"))
+const Port = process.env.PORT || 3001;
 
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
@@ -105,8 +107,7 @@ server.post("/logins", async (req, res) => {
 
         const passwordSchema = md5(password);
 
-        const currentEmailLogin = await loginSchema.create({ username: username, password: passwordSchema });
-
+        const currentEmailLogin = await loginSchema.findOne({ username: username, password: passwordSchema });
         if (currentEmailLogin == null) {
             res.json({
                 code: 400,
@@ -130,4 +131,5 @@ server.post("/logins", async (req, res) => {
 
 mongoose
     .connect('mongodb://127.0.0.1:27017/fullStack')
-    .then(server.listen(3001, () => { console.log("server is running") }));
+    .then(server.listen(Port, () => { console.log(`server is running ${Port}`) 
+}));

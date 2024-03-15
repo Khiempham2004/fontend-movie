@@ -70,6 +70,7 @@ const Narbar = () => {
     }
     const [suggestSearch, setSuggestSearch] = useState('')
     const [data, setData] = useState(null);
+    
     const search = async (event) => {
         event.preventDefault();
         try {

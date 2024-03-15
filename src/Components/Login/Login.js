@@ -6,7 +6,6 @@ import MuiAlert from '@mui/material/Alert';
 import axios from 'axios';
 
 const listForm = {
-    // Email: "",
     userName: "",
     password: "",
 }
@@ -19,9 +18,9 @@ function Login() {
     const [formError, setFormError] = useState({});
     const [userName, setUserName] = useState('')
     const [passWord, setPassword] = useState('')
-    const [userData, setUserData] = useState(null);
+    const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState(null);   
 
     const navigate = useNavigate();
 
@@ -52,41 +51,45 @@ function Login() {
         event.preventDefault()
         if (validateForm()) {
             navigate("/trangchu");
-            console.log("formValue", formValue)
+            // console.log("formValue", formValue)
             alert('You have success logged ! ');
         } else {
             alert('This is an error alert - check it out')
         }
     }
-    // const getUser = async () => {
-    //     try {
-    //         const response = await axios.post('/http://localhost:3001/logins');
-    //         console.log(response);
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // }
 
-    useEffect(() => {
-        const getUser = async () => {
-            try {
-                const response = await fetch('http://localhost:3001/logins'); // Replace with your actual API endpoint
-                if (!response.ok) {
-                    throw new Error(`API request failed with status ${response.status}`);
-                }
+    const getUser = async () => {
+        try {
+            const response = await axios.post('localhost:3001/logins');
 
-                const data = await response.json();
-                setUserData(data); 
-            } catch (err) {
-                console.error('Error fetching user data:', err);
-                setError(err.message); 
-            } finally {
-                setIsLoading(false); 
-            }
-        };
+            console.log(response);
+            setData(response.data)
+        } catch (error) {
+            console.error("error :>>" , error);
 
-        getUser();
-    }, []); 
+        }
+    }
+
+    // useEffect(() => {
+    //     const getUser = async () => {
+    //         try {
+    //             const response = await fetch('http://localhost:3001/logins'); // Replace with your actual API endpoint
+    //             if (!response.ok) {
+    //                 throw new Error(`API request failed with status ${response.status}`);
+    //             }
+
+    //             const data = await response.json();
+    //             setUserData(data); 
+    //         } catch (err) {
+    //             console.error('Error fetching user data:', err);
+    //             setError(err.message); 
+    //         } finally {
+    //             setIsLoading(false); 
+    //         }
+    //     };
+
+    //     getUser();
+    // }, []); 
 
     // Display content based on state
     // if (isLoading) {
@@ -109,16 +112,17 @@ function Login() {
                     <div className='form-check'>
                         <label htmlFor='userName' className='form-label'>Username : </label>
                         <br></br>
-                        <input type='text' value={formValue.Email} onChange={handleUsername} placeholder='Username' name='Username' />
+                        <input type='text' value={formValue.getUser} onChange={handleUsername} placeholder='Username' name='Username' />
                     </div>
 
                     <div className='form-group'>
                         <label htmlFor='pwd' className='checkvar'>Password: </label>
                         <br></br>
-                        <input type='passWord' value={formValue.password} onChange={handlePassword} placeholder='Password' name='enterPassword' />
+                        <input type='passWord' value={formValue.getUser} onChange={handlePassword} placeholder='Password' name='enterPassword' />
                     </div>
                     <br></br>
                     <button
+                        onClick={getUser}
                         type='submit'
                         className='btn btn-primary'
                     >Tiếp Tục

@@ -25,10 +25,7 @@ app.post("/search", async (req, res) => {
         if (!searchs) {
             throw new Error("search is required!")
         }
-        // const resultSearch = searchSuggest.filter(movieSearch =>
-        //     movieSearch.id.toLowerCase().includes(query.toLowerCase())
-        // );
-        // if (!resultSearch) throw new Error("query paramester is required");
+
         res.status(200).send(searchs);
     } catch (error) {
         console.log("error :>> ", error);

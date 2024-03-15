@@ -3,7 +3,6 @@ import { useState } from 'react';
 import './Register.css'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-import { createRegister } from './auth.js';
 
 
 const listForms = {
@@ -87,7 +86,7 @@ function Register() {
     const userRegister = async (event) => {
         event.preventDefault()
         try {
-            const response = await axios.post('http://localhost:3002/register', {
+            const response = await axios.post('http://localhost:3001/register', {
                 email: formRegister.Email,
                 userName: formRegister.UserName,
                 passWord: formRegister.Password,
@@ -119,17 +118,17 @@ function Register() {
             <div className='register-heading'>
                 <form action='' onSubmit={handleClickForm}>
                     <h1 className=''>Register</h1>
-                    <div class="container">
+                    <div className="container">
                         <p className='singofLogin'>Please fill in this form to create an account.</p>
                         <hr></hr>
 
-                        <label for="email"><b>Email</b></label>
+                        <label><b>Email</b></label>
                         <input type="text" value={formRegister.Email} onChange={handleEmail} placeholder="Enter Email" name="email" id="email" required />
 
-                        <label for="psw"><b>UserName</b></label><br></br>
+                        <label><b>UserName</b></label><br></br>
                         <input type="username" value={formRegister.UserName} onChange={handleUserName} placeholder="username" id='password' name="username" required />
                         <br></br>
-                        <label for="psw-repeat"><b>Password</b></label>
+                        <label><b>Password</b></label>
                         <input type="password" value={formRegister.Password} onChange={handlePassword} placeholder="Password" name="psw-repeat" id="psw-repeat" required />
                         <hr></hr>
                         <p>By creating an account you agree to our <a href="/">Terms & Privacy</a>.</p>
@@ -137,7 +136,7 @@ function Register() {
                         <button type="submit" className="registerbtn" >Register</button>
                     </div>
 
-                    <div class="container signin">
+                    <div className="container signin">
                         <p >Already have an account? <a href="/">Sign in</a>.</p>
                     </div>
                 </form>
