@@ -1,10 +1,8 @@
 import express from "express";
-import mongoose, { connect } from "mongoose";
+import mongoose from "mongoose";
 import bcrypt from 'bcrypt';
-import bodyPaser from 'body-parser';
 import dotenv from 'dotenv';
 import morgan from 'morgan'
-// import { hardKiller } from "init";
 import md5 from "md5"
 dotenv.config();
 
@@ -12,6 +10,7 @@ const server = express();
 server.use(express.json());
 server.use(morgan("combined"))
 const Port = process.env.PORT || 3001;
+
 
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
@@ -72,7 +71,7 @@ server.post("/student", async (req, res) => {
 
 server.use(express.json())
 
-server.post("/register", async (req, res) => {
+server.post("/registers", async (req, res) => {
     try {
         const { email, username, password } = req.body;
         if (!email) throw new Error("email is required")
@@ -81,8 +80,12 @@ server.post("/register", async (req, res) => {
 
         // md5 : ma hoa mat khau
         const passWordMd5 = md5(password);
-        // console.log(passWordMd5);
-        const newUser = await registerSchema.create({ email, username, password: passWordMd5 })
+        console.log(passWordMd5);
+        const newUser = await registerSchema.create({
+            email,
+            username,
+            password: passWordMd5
+        })
 
         await newUser.save()
         return res.status(200).send("Register successfully!")
@@ -93,7 +96,7 @@ server.post("/register", async (req, res) => {
 })
 
 server.use(express.json())
-server.post("/logins", async (req, res) => {
+server.post("/login", async (req, res) => {
     try {
         const username = req.body.username;
         let password = req.body.password;
@@ -106,7 +109,7 @@ server.post("/logins", async (req, res) => {
         }
 
         const passwordSchema = md5(password);
-
+        console.log(passwordSchema);
         const currentEmailLogin = await loginSchema.findOne({ username: username, password: passwordSchema });
         if (currentEmailLogin == null) {
             res.json({
@@ -129,7 +132,15 @@ server.post("/logins", async (req, res) => {
     }
 })
 
+const handleLogout = (req ,res) =>{
+    try {
+        res.clearCookie('jwt')
+    } catch (error) {
+        console.log("error :>>" , error);
+
+    }
+}
 mongoose
-    .connect('mongodb://127.0.0.1:27017/fullStack')
-    .then(server.listen(Port, () => { console.log(`server is running ${Port}`) 
-}));
+    .connect('mongodb://localhost:27017/fullStack')
+    .then(server.listen(Port, () => { console.log(`server is running ${Port}`)
+    }))

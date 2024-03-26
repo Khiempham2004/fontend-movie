@@ -101,6 +101,7 @@ body {
     padding-left: 50px;
     padding: 1px 1px 10px 20px;
 }
+
 .header-input {
     margin-left: 10px;
     font-size: 10px;
@@ -110,8 +111,9 @@ body {
 .header-search .header-input {
     background-color: white;
     font-size: 10px;
-    border-radius: 30px ;
+    border-radius: 30px;
 }
+
 li {
     list-style: none;
 }
@@ -130,31 +132,18 @@ a {
 
 .header-package-effect {
     margin-left: 23px;
-    background-color: red;
+    /* background-color: red; */
     border-radius: 10px;
 }
 
 .header-icon {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex: 2;
-    margin-left: 80px;
+    margin-left: 30px;
     padding: 10px 10px;
     cursor: pointer;
-    border-radius: 4;
-    color: #dbdbdb;
-}
-
-.header-bell {
-    display: flex;
-    justify-content: center;
-}
-
-.header-userName {
-    display: block;
-    opacity: 1;
-    right: 80px;
-    top: 100%;
+    border-radius: 4px;
 }
 
 .header-login input {
@@ -168,10 +157,13 @@ a {
 }
 
 .header-login button {
-    background-color: red;
     color: #fafafa;
     border-radius: 10px;
     padding: 15px 70px 20px 90px;
     overflow: hidden;
     text-decoration: none;
+}
+
+.bg-body-tertiary{
+    margin-left: 90px;
 }

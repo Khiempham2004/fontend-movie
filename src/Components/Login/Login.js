@@ -66,7 +66,6 @@ function Login() {
             setData(response.data)
         } catch (error) {
             console.error("error :>>" , error);
-
         }
     }
 

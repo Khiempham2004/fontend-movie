@@ -49,18 +49,6 @@ function Channel() {
                             src="https://img-zlr1.tv360.vn/image1/2020_09_23/1600822540493/79943158bdd1_480_270.png" decoding="async"
                         />
                     </div>
-                    {/* <div itemID={7}>
-                        <img className='channel-block-css'
-                            alt="vtv5"
-                            src="https://img-zlr1.tv360.vn/image1/2023/06/15/08/1686794357811/c08ce385651d_480_270.png" decoding="async"
-                        />
-                    </div>
-                    <div itemID={8}>
-                        <img className='channel-block-css'
-                            alt="HTV Thể Thao" 
-                            src="https://img-zlr1.tv360.vn/image1/2023/04/03/16/1680514594557/ab2557f0b015_480_270.png" decoding="async"
-                        />
-                    </div> */}
                 </div>
             </div>
         </div>

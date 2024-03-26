@@ -24,12 +24,10 @@ import Destruction from './redux/Destruction/Index';
 import ReduxGangster from './redux/ReduxGangster/Index';
 import ReduxControl from './redux/ReduxControl/Index';
 import Packages from './Components/Packages/Index';
+import Logout from './Components/Logout/Logout';
 import Register from './Components/Register/Register';
-import { useState } from 'react';
-import { redirect } from 'react-router-dom';
 function App() {
-  const [isRegister, setRegister] = useState(false)
-  const [isLogin, setLogin] = useState(false)
+
   return (
     <BrowserRouter>
       <Routes>
@@ -42,6 +40,12 @@ function App() {
             <Footer />
           </>}
         />
+        <Route path='/logout' element={<>
+          <Logout/>
+        </>
+        } />
+        <Route path='/logout' element={<>
+        </>} />
         <Route exact path='/movie/tan-tieu-ngao-giang-ho' element={
           <>
             <Narbar />

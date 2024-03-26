@@ -1,16 +1,22 @@
 import React from 'react'
 import './Navbar.css'
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useContext } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { MDBAccordion, MDBAccordionItem, MDBIcon } from 'mdb-react-ui-kit';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
-const Narbar = () => {
+import axios from 'axios';
+const AuthContext = React.createContext();
+
+
+const Narbar = (props) => {
     const contextSuggest = [
         {
             id: '1',
@@ -46,8 +52,21 @@ const Narbar = () => {
     const [isSuggest, setSuggest] = useState(false)
     const [navSubSuggest, navSetSubSuggest] = useState(contextSuggest)
     const [anchorEl, setAnchorEl] = React.useState(null);
-    const navigate = useNavigate("1")
+    const [logout, setLogout] = useState(false)
+    const navigate = useNavigate("1");
+    const logoutUser = useContext(AuthContext);
     const open = Boolean(anchorEl);
+    const location = useLocation();
+    // const handleLogout = async () => {
+    //     let data = await logoutUser();
+    //     if(data && +data.EC === 0){
+
+    //     }
+    // }
+
+    // if (user && user.isAuthenticated === true || location.pathname === '/') {
+
+    // }
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -67,10 +86,21 @@ const Narbar = () => {
             return item.title.toLowerCase().indexOf(searchName.toLowerCase()) > -1 || item.id === searchName;
         })
         navSetSubSuggest(filterNav)
+    };
+
+    const handleLogout = async () => {
+        setLogout(true);
+        try {
+            await logoutUser();
+            navigate('/register');
+        } catch (error) {
+            console.log("logout error :>>", error);
+        } finally {
+            setLogout(false);
+        }
     }
-    const [suggestSearch, setSuggestSearch] = useState('')
-    const [data, setData] = useState(null);
-    
+
+
     const search = async (event) => {
         event.preventDefault();
         try {
@@ -138,22 +168,15 @@ const Narbar = () => {
                     </div>
                 </div>
                 <div className='header-icon'>
-                    <div title='Thông báo'>
-                        <Link to='/thongbao'><i className='bx bxs-bell bx-md'></i></Link>
-                    </div>
-                    <br></br>
-                    <div className='header-package' title='mua gói'>
-                        <Link title='Mua Gói' to='/packages'>
-                            <button className='header-package-effect'>Mua Gói</button>
-                        </Link>
-                    </div>
-                    <div className='header-userName'>
-                        <ul>
-                            <li title='logout'>
-                                <Link to="/login"><i className='bx bxs-user bx-md'></i></Link>
-                            </li>
-                        </ul>
-                    </div>
+                    <Navbar expand="lg" className="bg-body-tertiary">
+                        <Nav className="me-auto">
+                            <NavDropdown title="Settings" id="basic-nav-dropdown">
+                                <NavDropdown.Item >Change password</NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href='/logout' >Logout </NavDropdown.Item>
+                            </NavDropdown>
+                        </Nav>
+                    </Navbar>
                 </div>
             </div>
         </div>
