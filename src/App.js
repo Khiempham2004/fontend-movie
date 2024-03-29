@@ -40,10 +40,7 @@ function App() {
             <Footer />
           </>}
         />
-        <Route path='/logout' element={<>
-          <Logout/>
-        </>
-        } />
+
         <Route path='/logout' element={<>
         </>} />
         <Route exact path='/movie/tan-tieu-ngao-giang-ho' element={

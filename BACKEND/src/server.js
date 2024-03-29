@@ -28,7 +28,7 @@ const userSchema = new Schema({
     password: String,
 })
 
-const registerSchema = mongoose.model("register", userSchema)
+const registerSchema = mongoose.model("registers", userSchema)
 
 const logins = new Schema({
     username: String,
@@ -84,7 +84,7 @@ server.post("/registers", async (req, res) => {
         const newUser = await registerSchema.create({
             email,
             username,
-            password: passWordMd5
+            password : passWordMd5
         })
 
         await newUser.save()
@@ -96,7 +96,7 @@ server.post("/registers", async (req, res) => {
 })
 
 server.use(express.json())
-server.post("/login", async (req, res) => {
+server.post("/logins", async (req, res) => {
     try {
         const username = req.body.username;
         let password = req.body.password;
@@ -132,15 +132,8 @@ server.post("/login", async (req, res) => {
     }
 })
 
-const handleLogout = (req ,res) =>{
-    try {
-        res.clearCookie('jwt')
-    } catch (error) {
-        console.log("error :>>" , error);
-
-    }
-}
 mongoose
-    .connect('mongodb://localhost:27017/fullStack')
-    .then(server.listen(Port, () => { console.log(`server is running ${Port}`)
+    .connect('mongodb://127.0.0.1:27017/fullStack')
+    .then(server.listen(Port, () => {
+        console.log(`server is running ${Port}`)
     }))

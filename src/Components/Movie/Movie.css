@@ -3,8 +3,7 @@
     padding-left: 90px;
     margin-top: 100px;
 }
-
-.slide-selected{
+/* .slide-selected{
     margin-left:160px;
     padding-bottom: 30px;
     padding-right: 130px;
@@ -17,7 +16,7 @@
     border:  2px solid black;
     border-radius: 10px;
     box-shadow: rgb(0, 0, 0) 0px 0px 20px;
-}
+} */
 
 .css-pssmrm{
     color: aliceblue;
@@ -28,14 +27,12 @@
     margin-right: 30px;
 }
 .Movie-image{
-    /* display: flex; */
     justify-content: center;
     display: flex;
     padding-right:5px;
     padding-top: 10px;
-    /* margin-left: 15px; */
     padding-bottom: 120px;
-    width: 10px;
+    width: 15px;
 }
 .Movies-suggest{
     width: 200px;   

@@ -11,9 +11,8 @@ import { useNavigate } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import { RemoveItem } from '../Logout/AuthContext.js'
 import axios from 'axios';
-const AuthContext = React.createContext();
 
 
 const Narbar = (props) => {
@@ -54,9 +53,21 @@ const Narbar = (props) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [logout, setLogout] = useState(false)
     const navigate = useNavigate("1");
-    const logoutUser = useContext(AuthContext);
     const open = Boolean(anchorEl);
-    const location = useLocation();
+    // const location = useLocation();
+
+    const hanldLogout = async () => {
+        setLogout(true);
+        try {
+            RemoveItem('token');
+            navigate('/');
+        } catch (error) {
+            console.log("logout :>>", error);
+        } finally {
+            setLogout(false);
+        }
+    }
+
     // const handleLogout = async () => {
     //     let data = await logoutUser();
     //     if(data && +data.EC === 0){
@@ -88,17 +99,6 @@ const Narbar = (props) => {
         navSetSubSuggest(filterNav)
     };
 
-    const handleLogout = async () => {
-        setLogout(true);
-        try {
-            await logoutUser();
-            navigate('/register');
-        } catch (error) {
-            console.log("logout error :>>", error);
-        } finally {
-            setLogout(false);
-        }
-    }
 
 
     const search = async (event) => {
@@ -163,7 +163,6 @@ const Narbar = (props) => {
                                 }
                             }}
                         />
-
                         <i className='bx bx-search-alt-2 bx-ms'></i>
                     </div>
                 </div>
@@ -173,7 +172,7 @@ const Narbar = (props) => {
                             <NavDropdown title="Settings" id="basic-nav-dropdown">
                                 <NavDropdown.Item >Change password</NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href='/logout' >Logout </NavDropdown.Item>
+                                <NavDropdown.Item onClick={hanldLogout}>Logout </NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                     </Navbar>

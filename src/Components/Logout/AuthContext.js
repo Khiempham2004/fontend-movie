@@ -1,3 +1,4 @@
 export const RemoveItem = (token) => {
-    localStorage.removeItem('token');
+    localStorage.removeItem(token);
 }
+

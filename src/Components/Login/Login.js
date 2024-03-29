@@ -20,7 +20,7 @@ function Login() {
     const [passWord, setPassword] = useState('')
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);   
+    const [error, setError] = useState(null);
 
     const navigate = useNavigate();
 
@@ -60,12 +60,12 @@ function Login() {
 
     const getUser = async () => {
         try {
-            const response = await axios.post('localhost:3001/logins');
+            const response = await axios.post('http://localhost:3001/logins');
 
             console.log(response);
             setData(response.data)
         } catch (error) {
-            console.error("error :>>" , error);
+            console.error("error :>>", error);
         }
     }
 
@@ -98,9 +98,6 @@ function Login() {
     // if (error) {
     //     return <div>Error: {error}</div>; // Display error message to the user
     // }
-
-
-
 
     return (
         <div>

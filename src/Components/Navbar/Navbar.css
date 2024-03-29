@@ -99,11 +99,11 @@ body {
     align-items: center;
     height: 45px;
     padding-left: 50px;
-    padding: 1px 1px 10px 20px;
+    /* padding: 1px 1px 10px 20px; */
 }
 
 .header-input {
-    margin-left: 10px;
+    margin-left: 12px;
     font-size: 10px;
     color: #dbdbdb;
 }
