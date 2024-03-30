@@ -1,63 +1,33 @@
-import express from "express";
-import mongoose from "mongoose";
-import bcrypt from 'bcrypt';
-import dotenv from 'dotenv';
-import morgan from 'morgan'
-import md5 from "md5";
-// import cors from 'cors';
-import jwt from 'jsonwebtoken';
-import userModel from './model/user.model.js'
-import { login, registers } from "./controller/router.controller.js";
-dotenv.config();
+import express from 'express'
+import dotenv from 'dotenv'
+import mongoose from 'mongoose';
+import morgan from 'morgan';
 
-const server = express();
-server.use(express.json());
-server.use(morgan("combined"))
+
+import userController from './controler/user.controler.js';
+// import { asyncCatch } from './utils/trycacth.js';
+import authController from './controler/auth.controller.js';
+import { asyncCatch } from './utils/trycacth.js';
+import { authen } from './utils/authen.js';
+
+dotenv.config();
+const app = express();
 const Port = process.env.PORT || 3001;
 
+app.use(express.json());
+app.use(morgan('combined')); // loger 
 
-server.post("/student", async (req, res) => {
-    const { skip, limit } = req.body;
-    const size = 10; // Page size
-    try {
-        const totalStudent = await StudentModel.aggregate([
-            { $match: { score: { $gt: 0 } } },
-            { $count: "totalCount" }
-        ]);
-        const students = await StudentModel.find({
-            score: {
-                $gt: 30,
-            }
-        }).sort({ score: -1, name: -1, dateOfBirth: -1 }).skip(skip * size).limit(10)
-        console.log("🚀 ~ server.post ~ students:", students)
+app.use("/users", userController);
+app.use("/auth", authController);
 
-        const totalPages = Math.ceil(totalStudent[0].totalCount / size)
-        // find 10 thang co diem > 20
-        // tinh duoc tong co bao nhieu thang cos diem > 20 ==> moi trang 10 thang (page - size)
-        res.json({
-            data: students,
-            code: 200,
-            messaege: "success",
-            totalPages,
-        })
-    } catch (error) {
-        console.log(error)
-        res.json({
-            code: 404,
-            message: "success"
-        })
-    }
+
+
+app.use("/index", (req, res) => {
+    res.status(200).send("Hello emiu của anh")
 })
-server.use(express.json());
-server.use(morgan('combined')); // loger 
-
-server.use(express.json())
-// server.use('/auth');
-server.use("/user", registers, login);
-
 
 mongoose
     .connect('mongodb://127.0.0.1:27017/fullStack')
-    .then(server.listen(Port, () => {
-        console.log(`server is running ${Port}`)
-    }))
+    .then(app.listen(Port, () => { console.log(`server is running ${Port}`) }));
+
+// app.listen( Port , () => console.log(`server is running ${Port}`))
