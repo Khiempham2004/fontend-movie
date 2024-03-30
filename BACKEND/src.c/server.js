@@ -3,11 +3,7 @@ import mongoose from "mongoose";
 import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 import morgan from 'morgan'
-import md5 from "md5";
-// import cors from 'cors';
-import jwt from 'jsonwebtoken';
-import userModel from './model/user.model.js'
-import { login, registers } from "./controller/router.controller.js";
+import md5 from "md5"
 dotenv.config();
 
 const server = express();
@@ -15,6 +11,30 @@ server.use(express.json());
 server.use(morgan("combined"))
 const Port = process.env.PORT || 3001;
 
+
+const Schema = mongoose.Schema;
+const ObjectId = Schema.ObjectId;
+
+const studentSchema = new mongoose.Schema({
+    name: String,
+    score: Number,
+    dateOfBirth: Date,
+})
+const StudentModel = mongoose.model("student", studentSchema)
+
+const userSchema = new Schema({
+    email: String,
+    username: String,
+    password: String,
+})
+
+const registerSchema = mongoose.model("registers", userSchema)
+
+const logins = new Schema({
+    username: String,
+    password: String,
+})
+const loginSchema = mongoose.model("logins", logins)
 
 server.post("/student", async (req, res) => {
     const { skip, limit } = req.body;
@@ -48,13 +68,69 @@ server.post("/student", async (req, res) => {
         })
     }
 })
-server.use(express.json());
-server.use(morgan('combined')); // loger 
 
 server.use(express.json())
-// server.use('/auth');
-server.use("/user", registers, login);
 
+server.post("/registers", async (req, res) => {
+    try {
+        const { email, username, password } = req.body;
+        if (!email) throw new Error("email is required")
+        if (!username) throw new Error("username is required")
+        if (!password) throw new Error("password is required")
+
+        // md5 : ma hoa mat khau
+        const passWordMd5 = md5(password);
+        console.log(passWordMd5);
+        const newUser = await registerSchema.create({
+            email,
+            username,
+            password : passWordMd5
+        })
+
+        await newUser.save()
+        return res.status(200).send("Register successfully!")
+    } catch (error) {
+        console.log("error :>>", error);
+        res.status(404).send(error.message)
+    }
+})
+
+server.use(express.json())
+server.post("/logins", async (req, res) => {
+    try {
+        const username = req.body.username;
+        let password = req.body.password;
+
+        if (username == "" || password == "") {
+            res.json({
+                code: 400,
+                message: "tai khoan hoac mat khau chua dien"
+            })
+        }
+
+        const passwordSchema = md5(password);
+        console.log(passwordSchema);
+        const currentEmailLogin = await loginSchema.findOne({ username: username, password: passwordSchema });
+        if (currentEmailLogin == null) {
+            res.json({
+                code: 400,
+                message: "email hoac mat khau khong hop le"
+            })
+        } else {
+            res.json({
+                code: 200,
+                message: "dang nhap thanh cong"
+            })
+        }
+
+    } catch (error) {
+        console.log("error :>>", error);
+        res.json({
+            code: 500,
+            message: "success"
+        })
+    }
+})
 
 mongoose
     .connect('mongodb://127.0.0.1:27017/fullStack')

@@ -17,7 +17,6 @@ const Port = process.env.PORT || 3001;
 app.use(express.json());
 app.use(morgan('combined')); // loger 
 
-app.use("/users", userController);
 app.use("/auth", authController);
 
 
@@ -29,5 +28,3 @@ app.use("/index", (req, res) => {
 mongoose
     .connect('mongodb://127.0.0.1:27017/fullStack')
     .then(app.listen(Port, () => { console.log(`server is running ${Port}`) }));
-
-// app.listen( Port , () => console.log(`server is running ${Port}`))

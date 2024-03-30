@@ -23,9 +23,10 @@ export const login = async (req, res, next) => {
     const { username, email, password } = req.body;
 
     const user = await userModel.findOne({
-        username: username, // $ne = not equals
-        email: email  // $ne = not equals
+        username: username,
+        email: email
     });
+
 
     const result = bcrypt.compare(password, user.password);
 
@@ -33,13 +34,13 @@ export const login = async (req, res, next) => {
         throw new Error("username , email or password not correct!");
     }
 
-    // Encode token (Access token + Refresh token)
     const payroad = {
         id: user._id.toString(),
         username: user.username,
         email: user.email,
         roles: user.roles,
     }
+
     const accessToken = jwt.sign(payroad, process.env.JWT, { expiresIn: "2m" });
     console.log("accessToken :>>", accessToken);
 
@@ -49,22 +50,3 @@ export const login = async (req, res, next) => {
 
     res.status(200).send({ accessToken, refreshToken })
 };
-
-export const refresh = (req, res, next) => {
-    const { refreshToken } = req.body;
-    const payload = jwt.verify(refreshToken, process.env.JWT_REFRESH_TOKEN);
-
-    // Phải bỏ 2 trường này
-    const newPayload = _.omit(payload, ["exp", "iat"]); // expireAt vs issuedAt
-
-    // Check lại user trong db -> newPayload = user như dòng 60
-    const accessToken = jwt.sign(newPayload, process.env.JWT_ACCESS_TOKEN, {
-        expiresIn: "30s",
-    });
-
-    const newRefreshToken = jwt.sign(newPayload, process.env.JWT_REFRESH_TOKEN, {
-        expiresIn: "1d",
-    });
-
-    return res.status(200).send({ accessToken, refreshToken: newRefreshToken });
-}
