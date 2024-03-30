@@ -5,7 +5,6 @@ import userModel from '../model/user.model.js';
 import md5 from 'md5';
 
 export const registers = async (req, res) => {
-
     try {
         const { email, username, password } = req.body;
         if (!email) throw new Error("email is required")

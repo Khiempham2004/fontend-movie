@@ -7,27 +7,13 @@ import md5 from "md5";
 // import cors from 'cors';
 import jwt from 'jsonwebtoken';
 import userModel from './model/user.model.js'
+import { login, registers } from "./controller/router.controller.js";
 dotenv.config();
 
 const server = express();
 server.use(express.json());
 server.use(morgan("combined"))
 const Port = process.env.PORT || 3001;
-
-// server.use(cors({
-//     origin: 'http://localhost:3000'
-// }))
-
-const Schema = mongoose.Schema;
-const ObjectId = Schema.ObjectId;
-
-// const studentSchema = new mongoose.Schema({
-//     name: String,
-//     score: Number,
-//     dateOfBirth: Date,
-// })
-// const StudentModel = mongoose.model("student", studentSchema)
-
 
 
 server.post("/student", async (req, res) => {
@@ -62,9 +48,12 @@ server.post("/student", async (req, res) => {
         })
     }
 })
+server.use(express.json());
+server.use(morgan('combined')); // loger 
 
 server.use(express.json())
-
+// server.use('/auth');
+server.use("/user", registers, login);
 
 
 mongoose
