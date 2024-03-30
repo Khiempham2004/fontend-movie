@@ -52,22 +52,29 @@ function Login() {
         if (validateForm()) {
             navigate("/trangchu");
             // console.log("formValue", formValue)
-            alert('You have success logged ! ');
+            // alert('You have success logged ! ');
         } else {
             alert('This is an error alert - check it out')
         }
     }
 
     const getUser = async () => {
+        const response = await axios.post('http://localhost:3001/logins', listForm);
+        console.log(response.data);
         try {
-            const response = await axios.post('http://localhost:3001/logins');
-
-            console.log(response);
-            setData(response.data)
+            if (response.data.accessToken) {
+                localStorage.setItem('accessToken', response.data.accessToken);
+                localStorage.setItem('isLoggedIn', true);
+                alert('Đăng nhập thành công!');
+                // navigate('/');
+                window.location.href = '/trangchu';
+            } else {
+                throw new Error("Lỗi đăng nhập!");
+            }
         } catch (error) {
-            console.error("error :>>", error);
+            window.alert('Đăng nhập không thành công! Vui lòng kiểm tra lại thông tin.');
         }
-    }
+    };
 
     // useEffect(() => {
     //     const getUser = async () => {

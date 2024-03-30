@@ -1,7 +1,7 @@
 import React, { Component, useEffect } from 'react'
 import { useState } from 'react';
 import './Register.css'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 
@@ -131,13 +131,13 @@ function Register() {
                         <label><b>Password</b></label>
                         <input type="password" value={formRegister.Password} onChange={handlePassword} placeholder="Password" name="psw-repeat" id="psw-repeat" required />
                         <hr></hr>
-                        <p>By creating an account you agree to our <a href="/">Terms & Privacy</a>.</p>
+                        <p>By creating an account you agree to our <Link to=''>Terms & Privacy</Link>.</p>
 
                         <button type="submit" className="registerbtn" >Register</button>
                     </div>
 
                     <div className="container signin">
-                        <p >Already have an account? <a href="/">Sign in</a>.</p>
+                        <p >Already have an account? <Link to=''>Sign in</Link>.</p>
                     </div>
                 </form>
             </div>

@@ -24,8 +24,6 @@ import Destruction from './redux/Destruction/Index';
 import ReduxGangster from './redux/ReduxGangster/Index';
 import ReduxControl from './redux/ReduxControl/Index';
 import Packages from './Components/Packages/Index';
-import Logout from './Components/Logout/Logout';
-import Register from './Components/Register/Register';
 function App() {
 
   return (
@@ -40,9 +38,6 @@ function App() {
             <Footer />
           </>}
         />
-
-        <Route path='/logout' element={<>
-        </>} />
         <Route exact path='/movie/tan-tieu-ngao-giang-ho' element={
           <>
             <Narbar />
@@ -140,4 +135,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
