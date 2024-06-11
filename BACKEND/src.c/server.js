@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 import morgan from 'morgan'
 import md5 from "md5"
+import cors from 'cors'
 dotenv.config();
 
 const server = express();
@@ -11,6 +12,9 @@ server.use(express.json());
 server.use(morgan("combined"))
 const Port = process.env.PORT || 3001;
 
+server.use(cors({
+    origin: 'http://localhost:3000'
+}))
 
 const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
@@ -84,7 +88,7 @@ server.post("/registers", async (req, res) => {
         const newUser = await registerSchema.create({
             email,
             username,
-            password : passWordMd5
+            password: passWordMd5
         })
 
         await newUser.save()
